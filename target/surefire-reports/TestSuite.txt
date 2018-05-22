@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 59.41 s <<< FAILURE! - in TestSuite
+showPassword(com.omnimobile.Testcases.AccountAccess)  Time elapsed: 7.105 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.omnimobile.Testcases.AccountAccess.showPassword(AccountAccess.java:91)
+

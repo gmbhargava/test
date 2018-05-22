@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.omnimobile.Testcases.AccountAccess">
+        <methods>
+          <include name="setup"/>
+          <include name="login"/>
+          <include name="uicat"/>
+        </methods>
+      </class> <!-- com.omnimobile.Testcases.AccountAccess -->
+      <class name="com.omnimobile.app.AppTest">
+        <methods>
+          <include name="testApp"/>
+        </methods>
+      </class> <!-- com.omnimobile.app.AppTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

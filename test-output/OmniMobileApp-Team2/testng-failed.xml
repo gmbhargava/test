@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [OmniMobileApp-Team2]">
+  <test name="OmniApp(failed)">
+    <groups>
+      <run>
+        <include name="RegressionTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.omnimobile.Testcases.AccountAccess">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="showPassword"/>
+        </methods>
+      </class> <!-- com.omnimobile.Testcases.AccountAccess -->
+    </classes>
+  </test> <!-- OmniApp(failed) -->
+</suite> <!-- Failed suite [OmniMobileApp-Team2] -->
