@@ -27,7 +27,7 @@ public class Login extends Basedriver
 	By shwPasswd= By.xpath("//XCUIElementTypeButton[@name='Ic Show']");
 	
 	By psswdTxtfld=By.xpath("//XCUIElementTypeCell[3]/XCUIElementTypeSecureTextField");
-	
+	By goBtn=By.xpath("/XCUIElementTypeButton[@name=\"Go\"]");
 	
 	
 	public Login(IOSDriver driver)
@@ -38,6 +38,13 @@ public class Login extends Basedriver
 	public MobileElement userNameTextBox()
 	{
 		MobileElement usrNameTextBox=(MobileElement) driver.findElement(usrName);
+		return usrNameTextBox;
+	}
+	
+	
+	public MobileElement goButton()
+	{
+		MobileElement usrNameTextBox=(MobileElement) driver.findElement(goBtn);
 		return usrNameTextBox;
 	}
 	
