@@ -1,7 +1,6 @@
 package com.omnimobile.Testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -21,27 +20,39 @@ import io.appium.java_client.remote.MobileCapabilityType;
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class AccountAccess extends Apploader {
 
-	private static String Username="Sample username";
+	private static String Username="jnyt1dev01";
 	private static String password="Sample password";
 
 	 
 	
-	@Test  (groups= {"RegressionTest","smokeTest"}) 
+	@Test  (groups= {"Regression","Smoke"}) 
 	public void login() 
 	{
-		loginPage.userNameTextBox().sendKeys(Username);
-		loginPage.passwordTextbox().sendKeys(password);
+		 loginPage.userNameTextBox().click();
+		    loginPage.clearTexticon().click();
+
+		loginPage.userNameTextBox().click();;
+		driver.getKeyboard().sendKeys("jnyt1dev01");
+		loginPage.passwordTextbox().click();
+		driver.getKeyboard().sendKeys("spring18");
+		driver.hideKeyboard();
 		loginPage.loginButton().click();
 		accountDashboardPage.logOutButton().click();
+		
+	
 		
 	}
 	
 	
 	
-	@Test (groups= {"RegressionTest"})
+	@Test (groups= {"Regression"})
 	public void clearUsername() throws InterruptedException
 	{
-		loginPage.userNameTextBox().sendKeys(Username);
+		 loginPage.userNameTextBox().click();
+		    loginPage.clearTexticon().click();
+
+		loginPage.userNameTextBox().click();;
+		driver.getKeyboard().sendKeys("jnyt1dev01");
 		Thread.sleep(2000);
 		loginPage.clearTexticon().click();
 		if(loginPage.userNameTextField().getAttribute("value")==null)
@@ -56,12 +67,18 @@ public class AccountAccess extends Apploader {
 		}
 		
 	}
-	@Test (groups= {"RegressionTest","smokeTest"})
+	@Test (groups= {"Regression","Smoke"})
 	public void rememberMe()
 	{
+		 loginPage.userNameTextBox().click();
+		    loginPage.clearTexticon().click();
+
 		
-		loginPage.userNameTextBox().sendKeys(Username);
-		loginPage.passwordTextbox().sendKeys(password);
+		loginPage.userNameTextBox().click();;
+		driver.getKeyboard().sendKeys("jnyt1dev01");
+		loginPage.passwordTextbox().click();
+		driver.getKeyboard().sendKeys("spring18");
+		driver.hideKeyboard();
 		loginPage.rememberMeSwitch().click();
 		loginPage.loginButton().click();
 		accountDashboardPage.logOutButton().click();
@@ -75,17 +92,22 @@ public class AccountAccess extends Apploader {
 		{
 			Assert.fail("Test failed: userName is not remembered");
 		}
-		
+		loginPage.userNameTextBox().click();
 		loginPage.clearTexticon().click();
 		
 		
 	}
 	
-	@Test(groups= {"RegressionTest"})
+	@Test(groups= {"Regression"})
 	public void showPassword()
 	{
-		loginPage.userNameTextBox().sendKeys(Username);
-		loginPage.passwordTextbox().sendKeys(password);
+		 loginPage.userNameTextBox().click();
+		    loginPage.clearTexticon().click();
+
+		loginPage.userNameTextBox().click();;
+		driver.getKeyboard().sendKeys("jnyt1dev01");
+		loginPage.passwordTextbox().click();
+		driver.getKeyboard().sendKeys("spring18");
 		loginPage.showPasswordIcon().click();
 		String displayedPassword=loginPage.passwordTextbox().getAttribute("value");
 		if(displayedPassword.equals(password))

@@ -16,13 +16,13 @@ public class Login extends Basedriver
 	
 	By password=By.xpath("//XCUIElementTypeCell[3]");
 	
-	By lgnBtn=By.xpath("//XCUIElementTypeCell[5]//XCUIElementTypeButton");
+	By lgnBtn=By.xpath("//XCUIElementTypeButton[@name='loginButton']");
 	
-	By clrtxt=By.xpath("//XCUIElementTypeButton[@name='Clear text']");
+	By clrtxt=By.xpath("//XCUIElementTypeButton[@name='Close']");
 	
 	By usrNametxtField=By.xpath("//XCUIElementTypeCell[2]/XCUIElementTypeTextField");
 	
-	By rememberme =By.xpath("//XCUIElementTypeSwitch[@name='Remember me']");
+	By rememberme =By.xpath("//XCUIElementTypeSwitch[@name='rememberMeSwitch']");
 	
 	By shwPasswd= By.xpath("//XCUIElementTypeButton[@name='Ic Show']");
 	
