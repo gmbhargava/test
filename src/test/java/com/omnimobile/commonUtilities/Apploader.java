@@ -25,8 +25,12 @@ public class Apploader {
 	 public static Login loginPage;
 	 public static Acountdashboard accountDashboardPage;
 	 public static TransactionHistoryList transactionHistoryPage;
+     public static Login loginhelp;
+     public static LoginHelp Loginhelppage;
+     public static navigationDashboard nav_DashboardPage;
 	 public static ExtentReports report=commonUtil.returnInstance();
 	 public static ExtentTest test;
+    
 	
 	 @BeforeSuite(alwaysRun=true)
 	  public void setup() throws IOException
@@ -42,7 +46,9 @@ public class Apploader {
 			driver= commonUtil.getDriver();
 		    loginPage=new Login(driver);
 		    accountDashboardPage=new Acountdashboard(driver);
-		    transactionHistoryPage=new TransactionHistoryList(driver);
+             Loginhelppage =new LoginHelp(driver);
+             nav_DashboardPage = new navigationDashboard(driver);
+             transactionHistoryPage=new TransactionHistoryList(driver);
 		    
 			 
 		
@@ -56,7 +62,7 @@ public class Apploader {
 	@AfterSuite(alwaysRun=true)
 	 public void tearDown()
 	 {
-		driver.quit();
+		//driver.quit();
 		 
 		 
 	 }
