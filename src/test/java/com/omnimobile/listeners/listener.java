@@ -1,10 +1,16 @@
 package com.omnimobile.listeners;
 
+import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class listener implements ITestListener{
+import com.omnimobile.commonUtilities.Apploader;
+import com.omnimobile.commonUtilities.commonUtil;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class listener extends Apploader implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext test) {
@@ -27,26 +33,35 @@ public class listener implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult testResult) {
 		// TODO Auto-generated method stub
-		System.out.println("Test Failed"+ testResult.getName());
-		
+		test.log(LogStatus.FAIL, testResult.getMethod().getMethodName()+"FAIL");
+		try {
+			test.log(LogStatus.FAIL, test.addScreenCapture(commonUtil.getScreenshot(testResult.getName())));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		report.endTest(test);
+		report.flush();
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult arg0) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
-	public void onTestStart(ITestResult arg0) {
+	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-		System.out.println("Test Case started"+arg0);
+		test=report.startTest(result.getName());
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("Test Case passed"+arg0);
+		test.log(LogStatus.PASS, arg0.getMethod().getMethodName()+"PASS");
+		report.endTest(test);
+		report.flush();
 		
 	}
 
