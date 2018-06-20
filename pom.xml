@@ -21,12 +21,10 @@
           
           <configuration>
            <suiteXmlFiles>
-                  <suiteXmlFile>src/test/resources/runner/testng.xml</suiteXmlFile>
-                  
+                  <suiteXmlFile>src/test/resources/runner/run.xml</suiteXmlFile>   
              </suiteXmlFiles>
         </configuration>
         </plugin>
-        
         <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -45,10 +43,10 @@
     <version>3.11.0</version>
 </dependency>
 <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-iphone-driver</artifactId>
-    <version>2.39.0</version>
-</dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>22.0</version>
+  </dependency>
 <dependency>
     <groupId>io.appium</groupId>
     <artifactId>java-client</artifactId>
@@ -71,11 +69,14 @@
     <artifactId>commons-lang3</artifactId>
     <version>3.7</version>
 </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+
+<dependency>
+    <groupId>com.relevantcodes</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>2.41.2</version>
+</dependency>
+
+
+    
   </dependencies>
 </project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [OmniMobileApp-SmokeTests]">
+  <listeners>
+    <listener class-name="com.omnimobile.listeners.listener"/>
+  </listeners>
+  <test name="OmniApp(failed)">
+    <classes>
+      <class name="com.omnimobile.Testcases.TransactionHistory">
+        <methods>
+          <include name="viewTransactionHistory"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="a_pendingTransactions"/>
+        </methods>
+      </class> <!-- com.omnimobile.Testcases.TransactionHistory -->
+      <class name="com.omnimobile.Testcases.AccountAccess">
+        <methods>
+          <include name="login"/>
+          <include name="rememberMe"/>
+          <include name="clearUsername"/>
+          <include name="showPassword"/>
+        </methods>
+      </class> <!-- com.omnimobile.Testcases.AccountAccess -->
+    </classes>
+  </test> <!-- OmniApp(failed) -->
+</suite> <!-- Failed suite [OmniMobileApp-SmokeTests] -->
