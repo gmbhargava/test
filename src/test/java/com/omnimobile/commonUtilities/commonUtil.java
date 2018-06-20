@@ -40,6 +40,13 @@ public class commonUtil {
 	public static String propertyFile="config.properties";
 	public static ExtentReports extent;
 	public static Login loginUtility;
+	public static String NO_RESET;
+
+	public static String UDID;
+
+	public static String XCODEORGID;
+
+	public static String XCODESIGNINGID;
 	
 	public static ExtentReports returnInstance()
 	{
@@ -94,6 +101,13 @@ public class commonUtil {
 		DEVICE_NAME=property.getProperty("device.name");
 		AUTOMATION_TYPE=property.getProperty("automation.type");
 		APP=property.getProperty("app");
+		NO_RESET=property.getProperty("noReset");
+
+		UDID=property.getProperty("udid");
+
+		XCODEORGID=property.getProperty("xcodeOrgId");
+
+		XCODESIGNINGID=property.getProperty("xcodeSigningId");
 		
 		SERVER=property.getProperty("server.url");
 		
@@ -108,6 +122,13 @@ public class commonUtil {
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, commonUtil.DEVICE_NAME);
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, commonUtil.AUTOMATION_TYPE);
 		capabilities.setCapability(MobileCapabilityType.APP, commonUtil.APP);
+		capabilities.setCapability(MobileCapabilityType.NO_RESET, commonUtil.NO_RESET);
+
+		capabilities.setCapability(MobileCapabilityType.UDID, commonUtil.UDID);
+
+		capabilities.setCapability("XCODEORGID", commonUtil.XCODEORGID);
+
+		capabilities.setCapability("XCODESIGNINGID", commonUtil.XCODESIGNINGID);
 		
 	}
 	
