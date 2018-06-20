@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="4" total="4" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="OmniMobileApp" duration-ms="43273" started-at="2018-06-18T14:17:11Z" finished-at="2018-06-18T14:17:54Z">
+  <suite name="OmniMobileApp" duration-ms="31916" started-at="2018-06-20T22:23:39Z" finished-at="2018-06-20T22:24:11Z">
     <groups>
     </groups>
-    <test name="OmniApp" duration-ms="43273" started-at="2018-06-18T14:17:11Z" finished-at="2018-06-18T14:17:54Z">
+    <test name="OmniApp" duration-ms="31916" started-at="2018-06-20T22:23:39Z" finished-at="2018-06-20T22:24:11Z">
       <class name="com.omnimobile.Testcases.TransactionHistory">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="setup" is-config="true" duration-ms="12944" started-at="2018-06-18T09:16:58Z" finished-at="2018-06-18T09:17:11Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="setup" is-config="true" duration-ms="16114" started-at="2018-06-20T17:23:23Z" finished-at="2018-06-20T17:23:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="viewTransactionsHistory()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="viewTransactionsHistory" duration-ms="15870" started-at="2018-06-18T09:17:11Z" finished-at="2018-06-18T09:17:27Z">
+        <test-method status="FAIL" signature="viewTransactionsHistory()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="viewTransactionsHistory" duration-ms="25781" started-at="2018-06-20T17:23:39Z" finished-at="2018-06-20T17:24:05Z">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
@@ -22,7 +22,7 @@
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver]]>
             </message>
             <full-stacktrace>
@@ -34,7 +34,7 @@ Driver info: driver.version: IOSDriver]]>
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
@@ -84,7 +84,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
           <reporter-output>
           </reporter-output>
         </test-method> <!-- viewTransactionsHistory -->
-        <test-method status="FAIL" signature="switchBetweenAccounts()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="switchBetweenAccounts" duration-ms="15402" started-at="2018-06-18T09:17:36Z" finished-at="2018-06-18T09:17:52Z">
+        <test-method status="FAIL" signature="switchBetweenAccounts()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="switchBetweenAccounts" duration-ms="2399" started-at="2018-06-20T17:24:05Z" finished-at="2018-06-20T17:24:08Z">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
@@ -95,7 +95,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver]]>
             </message>
             <full-stacktrace>
@@ -107,23 +107,23 @@ Driver info: driver.version: IOSDriver]]>
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:140)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElementByXPath(IOSDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.findElementById(IOSDriver.java:1)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at PageFactory.Acountdashboard.Account(Acountdashboard.java:29)
-	at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:90)
+	at PageFactory.Login.clearTexticon(Login.java:75)
+	at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:78)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -157,7 +157,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
           <reporter-output>
           </reporter-output>
         </test-method> <!-- switchBetweenAccounts -->
-        <test-method status="FAIL" signature="transactionListInitialLoad()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="transactionListInitialLoad" duration-ms="19" started-at="2018-06-18T09:17:53Z" finished-at="2018-06-18T09:17:53Z">
+        <test-method status="FAIL" signature="transactionListInitialLoad()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="transactionListInitialLoad" duration-ms="1600" started-at="2018-06-20T17:24:08Z" finished-at="2018-06-20T17:24:09Z">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
@@ -168,7 +168,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver]]>
             </message>
             <full-stacktrace>
@@ -180,7 +180,7 @@ Driver info: driver.version: IOSDriver]]>
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
@@ -195,7 +195,7 @@ Driver info: driver.version: IOSDriver
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at PageFactory.Login.userNameTextBox(Login.java:40)
+	at PageFactory.Login.userNameTextBox(Login.java:51)
 	at com.omnimobile.Testcases.TransactionHistory.transactionListInitialLoad(TransactionHistory.java:109)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -230,7 +230,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
           <reporter-output>
           </reporter-output>
         </test-method> <!-- transactionListInitialLoad -->
-        <test-method status="FAIL" signature="selectSpecificTransaction()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="selectSpecificTransaction" duration-ms="16" started-at="2018-06-18T09:17:53Z" finished-at="2018-06-18T09:17:53Z">
+        <test-method status="FAIL" signature="selectSpecificTransaction()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="selectSpecificTransaction" duration-ms="1033" started-at="2018-06-20T17:24:10Z" finished-at="2018-06-20T17:24:11Z">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
@@ -241,7 +241,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver]]>
             </message>
             <full-stacktrace>
@@ -253,7 +253,7 @@ Driver info: driver.version: IOSDriver]]>
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMMNA79GY0U1VN', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
+System info: host: 'WNMMNA79GY0U1VN', ip: 'fe80:0:0:0:40b:fc26:12af:3c28%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.3', java.version: '1.8.0_162'
 Driver info: driver.version: IOSDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
@@ -268,7 +268,7 @@ Driver info: driver.version: IOSDriver
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at PageFactory.Login.userNameTextBox(Login.java:40)
+	at PageFactory.Login.userNameTextBox(Login.java:51)
 	at com.omnimobile.Testcases.TransactionHistory.selectSpecificTransaction(TransactionHistory.java:35)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -303,7 +303,7 @@ Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$Transfor
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectSpecificTransaction -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="tearDown" is-config="true" duration-ms="20" started-at="2018-06-18T09:17:54Z" finished-at="2018-06-18T09:17:54Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.omnimobile.Testcases.TransactionHistory@4d826d77]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-06-20T17:24:11Z" finished-at="2018-06-20T17:24:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -31,15 +31,15 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">OmniApp</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">4</td><td class="numi">43.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">OmniApp</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">4</td><td class="numi">31.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">OmniApp &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="4">com.omnimobile.Testcases.TransactionHistory</td><td><a href="#m1"><b>viewTransactionsHistory</b>  </a></td><td class="numi">1</td><td>1529331431466</td><td class="numi">15870</td></tr><tr class="failedodd"><td><a href="#m2"><b>switchBetweenAccounts</b>  </a></td><td class="numi">1</td><td>1529331456721</td><td class="numi">15402</td></tr><tr class="failedodd"><td><a href="#m3"><b>transactionListInitialLoad</b>  </a></td><td class="numi">1</td><td>1529331473171</td><td class="numi">19</td></tr><tr class="failedodd"><td><a href="#m4"><b>selectSpecificTransaction</b>  </a></td><td class="numi">1</td><td>1529331473833</td><td class="numi">16</td></tr>
+<tr class="failedodd"><td rowspan="4">com.omnimobile.Testcases.TransactionHistory</td><td><a href="#m1"><b>viewTransactionsHistory</b>  </a></td><td class="numi">1</td><td>1529533419339</td><td class="numi">25781</td></tr><tr class="failedodd"><td><a href="#m2"><b>switchBetweenAccounts</b>  </a></td><td class="numi">1</td><td>1529533445659</td><td class="numi">2399</td></tr><tr class="failedodd"><td><a href="#m3"><b>transactionListInitialLoad</b>  </a></td><td class="numi">1</td><td>1529533448249</td><td class="numi">1600</td></tr><tr class="failedodd"><td><a href="#m4"><b>selectSpecificTransaction</b>  </a></td><td class="numi">1</td><td>1529533450031</td><td class="numi">1033</td></tr>
 </table>
 <h1>OmniApp</h1>
-<h2 id="m1">com.omnimobile.Testcases.TransactionHistory:viewTransactionsHistory</h2>
+<h2 id="m1">com.omnimobile.Testcases.TransactionHistory:switchBetweenAccounts</h2>
 <div style="padding-left:3em">
 <p>Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
     at XCUITestDriver.callee$0$0$ (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/lib/commands/find.js:130:13)
@@ -49,44 +49,44 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at &lt;anonymous&gt;, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
+System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;fe80:0:0:0:40b:fc26:12af:3c28%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
 Driver info: driver.version: IOSDriver</p>
 org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
-<br/>at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:140)
-<br/>at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-<br/>at io.appium.java_client.ios.IOSDriver.findElementByXPath(IOSDriver.java:1)
-<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)
+<br/>at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+<br/>at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+<br/>at io.appium.java_client.ios.IOSDriver.findElementById(IOSDriver.java:1)
+<br/>at org.openqa.selenium.By$ById.findElement(By.java:218)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at PageFactory.Acountdashboard.Account(Acountdashboard.java:29)
-<br/>at com.omnimobile.Testcases.TransactionHistory.viewTransactionsHistory(TransactionHistory.java:22)
+<br/>at PageFactory.Login.clearTexticon(Login.java:75)
+<br/>at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:78)
 <br/>25 lines not shown
 <p>Caused by com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement</p>
 org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
-<br/>at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:140)
-<br/>at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-<br/>at io.appium.java_client.ios.IOSDriver.findElementByXPath(IOSDriver.java:1)
-<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)
+<br/>at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+<br/>at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+<br/>at io.appium.java_client.ios.IOSDriver.findElementById(IOSDriver.java:1)
+<br/>at org.openqa.selenium.By$ById.findElement(By.java:218)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at PageFactory.Acountdashboard.Account(Acountdashboard.java:29)
-<br/>at com.omnimobile.Testcases.TransactionHistory.viewTransactionsHistory(TransactionHistory.java:22)
+<br/>at PageFactory.Login.clearTexticon(Login.java:75)
+<br/>at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:78)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">com.omnimobile.Testcases.TransactionHistory:switchBetweenAccounts</h2>
+<h2 id="m2">com.omnimobile.Testcases.TransactionHistory:viewTransactionsHistory</h2>
 <div style="padding-left:3em">
 <p>Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
     at XCUITestDriver.callee$0$0$ (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/lib/commands/find.js:130:13)
@@ -96,7 +96,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at &lt;anonymous&gt;, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
+System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;fe80:0:0:0:40b:fc26:12af:3c28%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
 Driver info: driver.version: IOSDriver</p>
 org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
@@ -112,7 +112,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
 <br/>at PageFactory.Acountdashboard.Account(Acountdashboard.java:29)
-<br/>at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:90)
+<br/>at com.omnimobile.Testcases.TransactionHistory.viewTransactionsHistory(TransactionHistory.java:22)
 <br/>25 lines not shown
 <p>Caused by com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement</p>
 org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
@@ -129,7 +129,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
 <br/>at PageFactory.Acountdashboard.Account(Acountdashboard.java:29)
-<br/>at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:90)
+<br/>at com.omnimobile.Testcases.TransactionHistory.viewTransactionsHistory(TransactionHistory.java:22)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
@@ -143,7 +143,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at &lt;anonymous&gt;, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
+System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;fe80:0:0:0:40b:fc26:12af:3c28%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
 Driver info: driver.version: IOSDriver</p>
 org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
@@ -158,7 +158,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at PageFactory.Login.userNameTextBox(Login.java:40)
+<br/>at PageFactory.Login.userNameTextBox(Login.java:51)
 <br/>at com.omnimobile.Testcases.TransactionHistory.selectSpecificTransaction(TransactionHistory.java:35)
 <br/>25 lines not shown
 <p>Caused by com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement</p>
@@ -175,7 +175,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at PageFactory.Login.userNameTextBox(Login.java:40)
+<br/>at PageFactory.Login.userNameTextBox(Login.java:51)
 <br/>at com.omnimobile.Testcases.TransactionHistory.selectSpecificTransaction(TransactionHistory.java:35)
 <br/>25 lines not shown
 </div>
@@ -190,7 +190,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
     at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
     at &lt;anonymous&gt;, error=no such element, message=An element could not be located on the page using the given search parameters.}
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
+System info: host: &apos;WNMMNA79GY0U1VN&apos;, ip: &apos;fe80:0:0:0:40b:fc26:12af:3c28%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.3&apos;, java.version: &apos;1.8.0_162&apos;
 Driver info: driver.version: IOSDriver</p>
 org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
@@ -205,7 +205,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:326)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at PageFactory.Login.userNameTextBox(Login.java:40)
+<br/>at PageFactory.Login.userNameTextBox(Login.java:51)
 <br/>at com.omnimobile.Testcases.TransactionHistory.transactionListInitialLoad(TransactionHistory.java:109)
 <br/>25 lines not shown
 <p>Caused by com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement</p>
@@ -222,7 +222,7 @@ org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:324)
 <br/>at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 <br/>at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 <br/>at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-<br/>at PageFactory.Login.userNameTextBox(Login.java:40)
+<br/>at PageFactory.Login.userNameTextBox(Login.java:51)
 <br/>at com.omnimobile.Testcases.TransactionHistory.transactionListInitialLoad(TransactionHistory.java:109)
 <br/>25 lines not shown
 </div>
