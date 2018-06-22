@@ -33,7 +33,6 @@ public class EnterAmountScreen extends Basedriver {
 	
 	By reviewBtn= By.id("Review");
 
-
 		private By viewTransctionbtn;
 	
 	
