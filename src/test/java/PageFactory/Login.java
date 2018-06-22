@@ -16,7 +16,8 @@ public class Login extends Basedriver
 	
 	By password=By.xpath("//XCUIElementTypeCell[3]");
 	
-	By lgnBtn=By.xpath("//XCUIElementTypeCell[5]//XCUIElementTypeButton");
+	By lgnBtn=By.id("loginButton");
+			//By.xpath("//XCUIElementTypeCell[5]//XCUIElementTypeButton");
 	
 	By clrtxt=By.xpath("//XCUIElementTypeButton[@name='Clear text']");
 	

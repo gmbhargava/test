@@ -16,9 +16,9 @@ import io.appium.java_client.ios.IOSDriver;
 public class ZelleRequestConfirmationScreen extends Basedriver {
 
 	
-	By confirmationFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"Request Sent\"]");
+	By confirmationFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='REQUEST SENT']");
 	
-	By requestLable=By.xpath("//XCUIElementTypeStaticText[@name=\"Money Requested\"]");
+	By requestLable=By.xpath("//XCUIElementTypeStaticText[@name='Money Requested']");
 	
 	
 	By confirmationIcon=By.id("icon-checkmark");
@@ -30,9 +30,6 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
 
 
-
-	
-	
 	public ZelleRequestConfirmationScreen(IOSDriver driver)
 	{
 		super(driver);

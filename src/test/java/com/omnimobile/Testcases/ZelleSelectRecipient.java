@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -16,6 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.omnimobile.commonUtilities.Apploader;
+import com.omnimobile.commonUtilities.commonUtil;
 
 import PageFactory.Login;
 import io.appium.java_client.MobileElement;
@@ -27,22 +30,32 @@ import io.appium.java_client.remote.MobileCapabilityType;
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleSelectRecipient extends Apploader {
 
-	private static String recipientName="Kranthi";
-	private CharSequence recipientPhoneNumber="";
-	private CharSequence recipientEmail;
-	private CharSequence recipientList;
+	 String recipientName;
+	String  recipientEmail;
 	
-	private static String Username="asdfghj";
-	private static String password="12345666";
+	String recipientFirstName;
+	String recipientPhoneNumber;
+	 String  recipientLastName;
+	String specialCharEmail;
+	 String Username;
+	 String password;
 
-	 
-	
-	@BeforeTest
-	public void login() 
+	 @BeforeTest
+	public void login() throws IOException 
 	{
 		try {
-		loginPage.userNameTextBox().sendKeys(Username);
-		loginPage.passwordTextbox().sendKeys(password);
+			this.Username=commonUtil.loadTestData("Username");
+			this.password=commonUtil.loadTestData("password");
+			this.recipientName=commonUtil.loadTestData("recipientName");
+			this.recipientPhoneNumber =commonUtil.loadTestData("phoneNumberToken");
+			this.recipientEmail=commonUtil.loadTestData("emailToken");
+			this.recipientFirstName=commonUtil.loadTestData("recipientFirstName");
+			this.recipientLastName=commonUtil.loadTestData("recipientLastName");
+			this.specialCharEmail=commonUtil.loadTestData("specialCharEmail");
+					
+			
+		loginPage.userNameTextBox().sendKeys(this.Username);
+		loginPage.passwordTextbox().sendKeys(this.password);
 		driver.hideKeyboard();
 		loginPage.loginButton().click();
 		
@@ -54,10 +67,10 @@ public class ZelleSelectRecipient extends Apploader {
 		
 	}
 	 
-	
 	@Test  (groups= {"RegressionTest","smokeTest"},priority=0) 
 	public void verifyHeader() 
 	{
+		zelleSelectRecipient.zelleButton().click();
 		wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.selectRecipientLabel()));
 		zelleSelectRecipient.selectRecipientLabel().isDisplayed();
 		Assert.assertTrue(zelleSelectRecipient.requestLable().isDisplayed(), "Request Money Header not displayed");
@@ -97,45 +110,109 @@ public class ZelleSelectRecipient extends Apploader {
 	{
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
-		zelleSelectRecipient.enterCharsFromKeyboard("Ji");
-		//zelleSelectRecipient.filterField().sendKeys("Ji");
+		//zelleSelectRecipient.enterCharsFromKeyboard(this.recipientName);
+		zelleSelectRecipient.filterField().sendKeys(this.recipientName);
 		Thread.sleep(4000);
 		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
 
-		Assert.assertTrue((recipients.size()>1), "recipients details Not Displayed As Per the Filter");
+		Assert.assertTrue((recipients.size()>=1), "recipients details Not Displayed As Per the Filter");
+		Reporter.log("Recipients Detailed Displayed As Per the Applied Filtered");
+		
+
+	}
+	
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=4) 
+	public void verifyRecipientSearchByFirstName() throws InterruptedException 
+	{
+		zelleSelectRecipient.filterField().clear();
+		zelleSelectRecipient.filterField().click();
+		zelleSelectRecipient.enterCharsFromKeyboard(this.recipientFirstName);
+		Reporter.log("FirstName entered in the  Filter");
+		//zelleSelectRecipient.filterField().sendKeys(this.recipientName);
+		Thread.sleep(4000);
+		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
+
+		Assert.assertTrue((recipients.size()>=1), "recipients details Not Displayed As Per the Filter");
+		Reporter.log("Recipients Detailed Displayed As Per the Applied Filtered");
+		
+
+	}
+	
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=5) 
+	public void verifyRecipientSearchByLastName() throws InterruptedException 
+	{
+		zelleSelectRecipient.filterField().clear();
+		zelleSelectRecipient.filterField().click();
+		//zelleSelectRecipient.enterCharsFromKeyboard(this.recipientLastName);
+		zelleSelectRecipient.filterField().sendKeys(this.recipientLastName);
+		Reporter.log("Last name entered in the  Filter");
+		Thread.sleep(4000);
+		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
+
+		Assert.assertTrue((recipients.size()>=1), "recipients details Not Displayed As Per the Filter");
 		Reporter.log("Recipients Detailed Displayed As Per the Applied Filtered");
 		
 
 	}
 
 	
-//	@Test  (groups= {"RegressionTest","smokeTest"},priority=4)  
-//	public void verifyRecipientPhoneNumbers() 
-//	{
-//		zelleSelectRecipient.filterField().sendKeys(recipientPhoneNumber);
-//		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
-//
-//		Assert.assertTrue((recipients.size()>1), "recipients PhoneNumbers Not Displayed");
-//		Reporter.log("Recipients PhoneNumbers Displayed As Expected");
-//		
-//		
-//	
-//	
-//	}
-//	
-//	
-//	@Test  (groups= {"RegressionTest","smokeTest"},priority=5) 
-//	public void verifyRecipientEmails() 
-//	{
-//		zelleSelectRecipient.filterField().sendKeys(recipientEmail);
-//		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
-//		
-//		Assert.assertTrue((recipients.size()>1), "recipients Emails  Not Displayed");
-//		Reporter.log("Recipients Emails Displayed As Expected");
-//	
-//	}
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=6)  
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=6) 
+	public void verifyRecipientSearchByEmail() throws InterruptedException 
+	{
+		zelleSelectRecipient.filterField().clear();
+		zelleSelectRecipient.filterField().click();
+		//zelleSelectRecipient.enterCharsFromKeyboard(this.recipientLastName);
+		zelleSelectRecipient.filterField().sendKeys(this.recipientEmail);
+		Reporter.log("Email entered in the  Filter");
+		Thread.sleep(4000);
+		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
+
+		Assert.assertTrue((recipients.size()>=1), "recipients details Not Displayed As Per the Filter");
+		Reporter.log("Recipients Detailed Displayed As Per the Applied Filtered");
+		
+
+	}
+
+	
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=7) 
+	public void verifyRecipientSearchByPhone() throws InterruptedException 
+	{
+		zelleSelectRecipient.filterField().clear();
+		zelleSelectRecipient.filterField().click();
+		//zelleSelectRecipient.enterCharsFromKeyboard(this.recipientLastName);
+		zelleSelectRecipient.filterField().sendKeys(this.recipientPhoneNumber);
+		Reporter.log("Phone number entered in the  Filter");
+		Thread.sleep(4000);
+		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
+
+		Assert.assertTrue((recipients.size()>=1), "recipients details Not Displayed As Per the Filter");
+		Reporter.log("Recipients Detailed Displayed As Per Phone number in the Applied Filtered");
+		
+
+	}
+
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=8) 
+	public void verifyRecipientSpecialCharEmail() throws InterruptedException 
+	{
+		zelleSelectRecipient.filterField().clear();
+		zelleSelectRecipient.filterField().click();
+		//zelleSelectRecipient.enterCharsFromKeyboard(this.recipientLastName);
+		zelleSelectRecipient.filterField().sendKeys(this.specialCharEmail);
+		Reporter.log("Special characters Email"+specialCharEmail+" in the  Filter");
+		Thread.sleep(4000);
+		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
+
+		Assert.assertTrue((recipients.size()>=1), "recipients details Not Displayed As Per the Filter");
+		Reporter.log("Recipients Detailed Displayed As Per Phone number in the Applied Filtered");
+		
+
+	}
+
+	
+
+	
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=10)  
 	public void selectRecipient() 
 	{
 		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
@@ -143,28 +220,21 @@ public class ZelleSelectRecipient extends Apploader {
 		Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
 		recipients.get(1).click();
 		wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.emailToken()));
-		zelleSelectRecipient.emailToken().click();
+		zelleSelectRecipient.emailTokens().get(0).click();
 		Reporter.log("Recipient selected As Expected");
 	}
 	
-	
-	
-
-//	
-	
-	
-//	@Test  (groups= {"RegressionTest","smokeTest"},priority=8)  
-//	public void verifyListOfRecipientsSearchByPhone() 
-//	{
-//		zelleSelectRecipient.filterField().sendKeys(recipientPhoneNumber);
-//		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
-//	
-//		Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
-//		Reporter.log("Recipients Lists Displayed As Expected");
-//	}
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=11)  
+	public void verifySelectIcon() 
+	{
+		Assert.assertTrue((zelleSelectRecipient.slectIocn().isEnabled()), "recipients select icon Not Displayed");
+		Reporter.log("recipients select displayed As Expected");
+	}
 	
 
-	@Test (groups= {"RegressionTest"},priority=9) 
+
+
+	@Test (groups= {"RegressionTest"},priority=12) 
 	public void verifyBackButton() throws InterruptedException
 	{
 		zelleSelectRecipient.backButton().click();

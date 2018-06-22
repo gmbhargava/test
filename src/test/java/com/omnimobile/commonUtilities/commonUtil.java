@@ -28,6 +28,7 @@ public class commonUtil {
 	public static URL  url;
 	public static String SERVER;
 	public static String propertyFile="config.properties";
+	public static String USERNAME;
 	
 	
 	
@@ -44,6 +45,20 @@ public class commonUtil {
 		APP=property.getProperty("app");
 		APP2=property.getProperty("app2");
 		SERVER=property.getProperty("server.url");
+		USERNAME=property.getProperty("userName");
+
+		
+		
+	}
+	
+	public static String loadTestData(String keyName) throws IOException
+	{
+		String fileName=commonUtil.USERNAME;
+		FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+ "/src/test/resources/Properties/TestData/"+fileName+".properties");
+		property.load(fis);
+		String keyVal=property.getProperty(keyName);
+		return keyVal;
+	
 		
 		
 	}

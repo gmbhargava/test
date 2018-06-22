@@ -1,6 +1,8 @@
 package PageFactory;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 import java.util.List;
 
@@ -22,24 +24,17 @@ public class EnterAmountScreen extends Basedriver {
 	
 	
 	By amountField=By.xpath("//XCUIElementTypeTextField");
+	By amountKeyBoard=By.className("XCUIElementTypeKeyboard");
 	
 	
 	
 	By doneBtn =By.xpath("//XCUIElementTypeButton[@name=\"Done\"]");
+	By backBtn=By.id("backArrow 1");
 	
 	By reviewBtn= By.id("Review");
-//	MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Review");
-//	el1.click();
 
 
-
-	private By recipientName;
-
-	private By recipientPhoneNumbers;
-
-	private By recipientEmail;
-
-	private By recipientlist;
+		private By viewTransctionbtn;
 	
 	
 	public EnterAmountScreen(IOSDriver driver)
@@ -68,6 +63,12 @@ public class EnterAmountScreen extends Basedriver {
 	}
 	
 	
+	public MobileElement keyBoard()
+	{
+		MobileElement selectLable=(MobileElement) driver.findElement(this.amountKeyBoard);
+		return selectLable;
+	}
+	
 	
 	public MobileElement doneButtn()
 	{
@@ -80,10 +81,49 @@ public class EnterAmountScreen extends Basedriver {
 		MobileElement revwButton =(MobileElement)driver.findElement(this.reviewBtn);
 		return revwButton;
 	}
-	
+
+
+
+
+
+    public MobileElement backButton()
+    {
+    	
+	   MobileElement backButon=(MobileElement)driver.findElement(backBtn);
+	  return backButon;
+
+    }
+
     
- 
+
+
+public MobileElement viewTransctionsBtn()
+    {
 	
+	
+	MobileElement viewTrans=(MobileElement)driver.findElement(this.viewTransctionbtn);
+	return viewTrans;
+
+    
+    }  
+
 }
+   
+ 
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 	
 

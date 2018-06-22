@@ -15,9 +15,10 @@ import io.appium.java_client.ios.IOSDriver;
 
 public class ZelleSelectRecipient extends Basedriver {
 
-	By viewTransactions=By.xpath("//XCUIElementTypeButton[@name=\"View Transactions\"]");
+	By viewTransactions=By.id("GreetingLabel");
+			
 	
-	By zelleBtn=By.xpath("(//XCUIElementTypeButton[@name='Zelle'])[1]");
+	By zelleBtn=By.xpath("//XCUIElementTypeButton[@name='Zelle']");
 	
 	By selectFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='SELECT RECIPIENT']");
 	
@@ -37,11 +38,16 @@ public class ZelleSelectRecipient extends Basedriver {
 	
 	By emailToken=By.xpath("//XCUIElementTypeSheet//XCUIElementTypeButton[contains(@name,'@')]");
 	
-	By backBtn =By.id("Back");
+	By phoneNumbrsToken=By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'-')]");
 	
-	//By pullBar =By.id("pullBarImage");
+	By unEnrolledPhoneNumbrs=By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'not enrolled')]");
 	
-	//By zelle  =By.xpath("//XCUIElementTypeButton[@name=\"Zelle\"]");
+	By cancelTokenBtn=By.id("Cancel");
+	
+	By backBtn =By.id("backArrow 1");
+	
+	By icon_select=By.xpath("//XCUIElementTypeImage[@name='icon-checkmark']");
+	
 	
 	
 
@@ -51,7 +57,6 @@ public class ZelleSelectRecipient extends Basedriver {
 
 	private By recipientEmail;
 
-	private By recipientlist;
 	
 	
 	public ZelleSelectRecipient(IOSDriver driver)
@@ -82,12 +87,7 @@ public class ZelleSelectRecipient extends Basedriver {
 		return zelle;
 	}
 	
-	//public MobileElement pullBarImage()
-	//{
-	//	MobileElement pullBarButton=(MobileElement) driver.findElement(pullBar);
-     //return pullBarButton;
-	//}
-	
+		
 	public MobileElement selectRecipientLabel()
 	{
 		MobileElement selectLable=(MobileElement) driver.findElement(selectFlowLable);
@@ -98,6 +98,12 @@ public class ZelleSelectRecipient extends Basedriver {
 	{
 		MobileElement requestLabl=(MobileElement) driver.findElement(requestLable);
 		return requestLabl;
+	}
+	
+	public MobileElement slectIocn()
+	{
+		MobileElement icon=(MobileElement) driver.findElement(this.icon_select);
+		return icon;
 	}
 	
 	public MobileElement filterField()
@@ -115,6 +121,24 @@ public class ZelleSelectRecipient extends Basedriver {
 	public List<MobileElement> recipientsDetailsList()
 	{
 		List<MobileElement> recipients=(List<MobileElement>) driver.findElements(this.recipientDetails);
+		return recipients;
+	}
+	
+	public List<MobileElement> emailTokens()
+	{
+		List<MobileElement> recipients=(List<MobileElement>) driver.findElements(this.emailToken);
+		return recipients;
+	}
+	
+	public List<MobileElement> phoneNumberTokens()
+	{
+		List<MobileElement> recipients=(List<MobileElement>) driver.findElements(this.phoneNumbrsToken);
+		return recipients;
+	}
+	
+	public List<MobileElement> notEnrolledPhoneNums()
+	{
+		List<MobileElement> recipients=(List<MobileElement>) driver.findElements(this.unEnrolledPhoneNumbrs);
 		return recipients;
 	}
 
@@ -183,40 +207,21 @@ public class ZelleSelectRecipient extends Basedriver {
 	
 	
 	
-	
-
-	public List<MobileElement> recipientListselectrecipient (){
+	public MobileElement cancelTokensButton(){
+		MobileElement btn=(MobileElement)driver.findElement(this.cancelTokenBtn);
+		return btn;
 		
-		List<MobileElement> selectRecipients=(List<MobileElement>)driver.findElements(recipientlist);
-		return selectRecipients;
-	
-	
 	}
 
 	
-	
-    public List<MobileElement> recipientVerifyListofRecipients (){
-		
-		List<MobileElement> selectRecipients=(List<MobileElement>)driver.findElements(recipientlist);
-		return selectRecipients;
-	
-	
-	
-	
-	
-   }
-	
-    
- public List<MobileElement> recipientListSearchByPhone (){
-		
-		List<MobileElement> selectRecipients=(List<MobileElement>)driver.findElements(recipientlist);
-		return selectRecipients;
-    
     
     
 	
- }
+ 
 	
 }
+
+
+
 	
 
