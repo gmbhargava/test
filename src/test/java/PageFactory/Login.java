@@ -17,20 +17,30 @@ public class Login extends Basedriver
 	By password=By.xpath("//XCUIElementTypeCell[3]");
 	
 	By lgnBtn=By.id("loginButton");
-			//By.xpath("//XCUIElementTypeCell[5]//XCUIElementTypeButton");
 	
-	By clrtxt=By.xpath("//XCUIElementTypeButton[@name='Clear text']");
+	By clrtxt=By.id("Close");
 	
-	By usrNametxtField=By.xpath("//XCUIElementTypeCell[2]/XCUIElementTypeTextField");
+	By usrNametxtField=By.id("usernameTextField");
 	
-	By rememberme =By.xpath("//XCUIElementTypeSwitch[@name='Remember me']");
+	By rememberme =By.id("rememberMeSwitch");
 	
-	By shwPasswd= By.xpath("//XCUIElementTypeButton[@name='Ic Show']");
+	By shwPasswd= By.id("Ic Show");
 	
-	By psswdTxtfld=By.xpath("//XCUIElementTypeCell[3]/XCUIElementTypeSecureTextField");
-	By goBtn=By.xpath("/XCUIElementTypeButton[@name=\"Go\"]");
+	By psswdTxtfld=By.id("passwordTextField");
 	
+	By Lgnhelp= By.name("loginHelpButton");
 	
+	By Forgotusrname = By.id("Forgot username?");
+	
+	By Forgotpassword = By.id("Forgot password?");
+	
+	By cncl = By.id("Cancel");
+	
+	By PLErr = By.xpath("//XCUIElementTypeOther[@name=\"The username or password you entered is incorrect. Do you need help logging in?\"]/XCUIElementTypeButton[2]");
+	
+	By needHlp = By.id("need help");
+	
+	 
 	public Login(IOSDriver driver)
 	{
 		super(driver);
@@ -39,13 +49,6 @@ public class Login extends Basedriver
 	public MobileElement userNameTextBox()
 	{
 		MobileElement usrNameTextBox=(MobileElement) driver.findElement(usrName);
-		return usrNameTextBox;
-	}
-	
-	
-	public MobileElement goButton()
-	{
-		MobileElement usrNameTextBox=(MobileElement) driver.findElement(goBtn);
 		return usrNameTextBox;
 	}
 	
@@ -90,4 +93,39 @@ public class Login extends Basedriver
 		MobileElement passwordtxtFld=(MobileElement)driver.findElement(psswdTxtfld);
 		return passwordtxtFld;
 	}
+	public MobileElement LgnhelpBtn()
+	{
+		MobileElement LgnhelpBtn=(MobileElement) driver.findElement(Lgnhelp);
+		return LgnhelpBtn;
+	}
+
+	public MobileElement Forgotusername()
+	{
+		MobileElement Forgotuserbtn=(MobileElement) driver.findElement(Forgotusrname);
+		return Forgotuserbtn;
+	}
+	public MobileElement Forgotpassword()
+	{
+		MobileElement Forgotpswrd=(MobileElement) driver.findElement(Forgotpassword);
+		return Forgotpswrd;
+	}
+	
+	public MobileElement cancel()
+	{
+		MobileElement cancel=(MobileElement) driver.findElement(cncl);
+		return cancel;
+	}
+	
+	public MobileElement PageLevelError()
+	{
+		MobileElement PLError=(MobileElement) driver.findElement(PLErr);
+		return PLError;
+	}
+	
+	public MobileElement needHelp()
+	{
+		MobileElement needHelp=(MobileElement) driver.findElement(needHlp);
+		return needHelp;
+	}
+	
 }

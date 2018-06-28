@@ -50,7 +50,7 @@ public class EnterAmountTests extends Apploader {
 		
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.selectRecipientLabel()));
+			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleRequestButton()));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,6 +61,7 @@ public class EnterAmountTests extends Apploader {
 	 @Test(groups = { "RegressionTest"},priority=0,alwaysRun=true)
 		public void enterAmountVerifyHeader() {
 		
+		 zelleSelectRecipient.zelleRequestButton().click();
 			List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();
 			Assert.assertTrue((recipients.size() > 1), "recipients Lists Not Displayed");
 			recipients.get(1).click();
@@ -162,6 +163,10 @@ public void verifyBackButton() {
 			Reporter.log(" Review button disables for zero amount as expected");
 		enterAmountScreen.reviewButtn().click();
 		Reporter.log(" Rview button enabled for maximum amount as expected");*/
+
+
+
+
 			 
 		 
 		 

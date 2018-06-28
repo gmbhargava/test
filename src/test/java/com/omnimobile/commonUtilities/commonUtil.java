@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
@@ -85,6 +86,7 @@ public class commonUtil {
 		
 	}
 	
+		
 	public static IOSDriver getDriver() throws MalformedURLException
 	{
 		url=new URL(commonUtil.SERVER);

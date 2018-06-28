@@ -59,10 +59,11 @@ public class SelectTokenSteps extends Apploader {
 		
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.selectRecipientLabel()));
+			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleRequestButton()));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
 	}
@@ -74,7 +75,9 @@ public class SelectTokenSteps extends Apploader {
 	
 	@Test  (groups= {"RegressionTest","smokeTest"},priority=0)  
 	public void selectOneRecipient() 
+	
 	{
+		zelleSelectRecipient.zelleRequestButton().click();
 		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
 				
 		Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
@@ -166,6 +169,9 @@ public class SelectTokenSteps extends Apploader {
 		zelleSelectRecipient.emailTokens().get(0).click();
 
 		Reporter.log("Token selected successfully");
+		
+		
+		
 	}
 	
 }

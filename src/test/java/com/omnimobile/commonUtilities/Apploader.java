@@ -6,8 +6,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import PageFactory.Login;
+import PageFactory.SendEnterAmountScreen;
 import PageFactory.ZelleRequestConfirmationScreen;
 import PageFactory.ZelleSelectRecipient;
+import PageFactory.ZelleSendReviewScreen;
+import PageFactory.ZelleSendSelectRecipientScreen;
 import PageFactory.Acountdashboard;
 import PageFactory.EnterAmountScreen;
 import io.appium.java_client.MobileElement;
@@ -23,6 +26,9 @@ public class Apploader {
 	 public static ZelleSelectRecipient zelleSelectRecipient ;
 	 public static EnterAmountScreen enterAmountScreen;
 	 public static ZelleRequestConfirmationScreen zelleRequestConfirmationScreen ;
+	 public static ZelleSendSelectRecipientScreen zelleSendSelectRecipientScreen ;
+	 public static SendEnterAmountScreen sendEnterAmountScreen;
+	 public static ZelleSendReviewScreen zelleSendReviewScreen;
 	 public static WebDriverWait wait;
 	 
 	
@@ -40,6 +46,9 @@ public class Apploader {
 		    zelleSelectRecipient=new ZelleSelectRecipient(driver);
 		    this.enterAmountScreen=new EnterAmountScreen(driver);
 		    this.zelleRequestConfirmationScreen=new ZelleRequestConfirmationScreen (driver);
+		    this.zelleSendSelectRecipientScreen=new ZelleSendSelectRecipientScreen(driver);
+		    this.sendEnterAmountScreen=new SendEnterAmountScreen(driver);
+		    this.zelleSendReviewScreen=new ZelleSendReviewScreen(driver);
 		    wait=new WebDriverWait(driver,30);		    
 		    
 		 }

@@ -49,7 +49,7 @@ public class EnterConfirmationSteps extends Apploader {
 		
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.selectRecipientLabel()));
+			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleRequestButton()));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -64,6 +64,7 @@ public class EnterConfirmationSteps extends Apploader {
 	@Test  (groups= {"RegressionTest","smokeTest"})  
 	public void zelleRequestConfirm() 
 	{
+		zelleSelectRecipient.zelleRequestButton().click();
 		List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();
 		Assert.assertTrue((recipients.size() > 1), "recipients Lists Not Displayed");
 		recipients.get(1).click();
@@ -100,6 +101,12 @@ public class EnterConfirmationSteps extends Apploader {
 	
 	
 }
+
+
+
+
+
+
 	
 	
 	

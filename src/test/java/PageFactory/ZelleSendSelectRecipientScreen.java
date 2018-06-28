@@ -13,20 +13,22 @@ import com.omnimobile.commonUtilities.Basedriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 
-public class ZelleSelectRecipient extends Basedriver {
+public class ZelleSendSelectRecipientScreen extends Basedriver {
 
 	By viewTransactions=By.id("GreetingLabel");
 			
 	
-	By zelleBtn=By.xpath("//XCUIElementTypeButton[@name='Zelle']");
+	By zelleSenBtn=By.xpath("//XCUIElementTypeButton[@name='Send Money']");
 	
-	By zelleRequestBtn=By.xpath("//XCUIElementTypeButton[@name='Request Money']");
+	
 	
 	By selectFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='SELECT RECIPIENT']");
 	
-	By requestLable=By.xpath("//XCUIElementTypeStaticText[@name=\"Request Money\"]");
+	By sendLable=By.xpath("//XCUIElementTypeStaticText[@name='Send Money']");
 	
 	By recipientAvatar=By.xpath("//XCUIElementTypeCell/XCUIElementTypeStaticText[1]");
+	
+	//By recipientAvatorView=By.xpath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientAvatarView\"])[1]");
 	
 	By filterField=By.id("Filter by name, phone, email");
 	
@@ -61,7 +63,7 @@ public class ZelleSelectRecipient extends Basedriver {
 
 	
 	
-	public ZelleSelectRecipient(IOSDriver driver)
+	public ZelleSendSelectRecipientScreen(IOSDriver driver)
 	{
 		super(driver);
 	}
@@ -83,15 +85,9 @@ public class ZelleSelectRecipient extends Basedriver {
 		
 	}
 	
-	public MobileElement zelleButton()
+	public MobileElement zelleSendButton()
 	{
-		MobileElement zelle=(MobileElement) driver.findElement(zelleBtn);
-		return zelle;
-	}
-	
-	public MobileElement zelleRequestButton()
-	{
-		MobileElement zelle=(MobileElement) driver.findElement(zelleRequestBtn);
+		MobileElement zelle=(MobileElement) driver.findElement(zelleSenBtn);
 		return zelle;
 	}
 	
@@ -102,9 +98,9 @@ public class ZelleSelectRecipient extends Basedriver {
 		return selectLable;
 	}
 	
-	public MobileElement requestLable()
+	public MobileElement zelleSendLable()
 	{
-		MobileElement requestLabl=(MobileElement) driver.findElement(requestLable);
+		MobileElement requestLabl=(MobileElement) driver.findElement(sendLable);
 		return requestLabl;
 	}
 	
