@@ -29,7 +29,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class SendReviewSteps extends Apploader {
+public class SendConfirmationTests extends Apploader {
 
 	 public static String Username;
 	 public static String password;
@@ -76,58 +76,41 @@ public class SendReviewSteps extends Apploader {
 			Reporter.log("Token selected successfully");
 			Reporter.log("Recipient selected As Expected");
 			wait.until(ExpectedConditions.visibilityOf(sendEnterAmountScreen.selectAmountLabel()));
-			Assert.assertTrue(this.sendEnterAmountScreen.sendMoneyLable().isDisplayed()," Enter amount header not displayed");
+			Assert.assertTrue(sendEnterAmountScreen.sendMoneyLable().isDisplayed()," Enter amount header not displayed");
 		
 			Reporter.log(" Amount header displayed as expected");
 			
 			sendEnterAmountScreen.enterAmntField().clear();
-			sendEnterAmountScreen.enterAmntField().sendKeys(this.amount);
+			sendEnterAmountScreen.enterAmntField().sendKeys(amount);
 			sendEnterAmountScreen.doneButtn().click();
 			Reporter.log(" Amount Entered succesfully");
 			wait.until(ExpectedConditions.visibilityOf(sendEnterAmountScreen.reviewButtn()));
-			Assert.assertTrue(this.sendEnterAmountScreen.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
+			Assert.assertTrue(sendEnterAmountScreen.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
 			Reporter.log(" Rview button enabled for maximum amount as expected");
 			
-			this.sendEnterAmountScreen.reviewButtn().click();
+			sendEnterAmountScreen.reviewButtn().click();
 			wait.until(ExpectedConditions.visibilityOf(zelleSendReviewScreen.reviewFlowLabl()));
-			Assert.assertTrue(this.zelleSendReviewScreen.sendLabl().isDisplayed()," Review screen not displayed");
+			Assert.assertTrue(zelleSendReviewScreen.sendLabl().isDisplayed()," Review screen not displayed");
 			//this.zelleSendReviewScreen.messageInput().sendKeys("Test Message");
 			//sendEnterAmountScreen.doneButtn().click();
 			Reporter.log(" Review screen displayed as expected");
 		}
 	
 	 
-  @Test(groups = { "RegressionTest"},priority=6)
-public void verifyBackButton() {
+	 @Test(groups = { "RegressionTest", "smokeTest" },priority=1)
+	public void verifySendMoneyConfirm() {
+		 zelleSendReviewScreen.sendButtn().click();
+		 wait.until(ExpectedConditions.visibilityOf(zelleSendReviewScreen.yesButtn()));
+		 zelleSendReviewScreen.yesButtn().click();
+		 wait.until(ExpectedConditions.visibilityOf(zelleSendConfirmationScreen.confirmFlowLable()));
+		Assert.assertTrue(zelleSendConfirmationScreen.confirmFlowLable().isDisplayed(),"Confirmation screen not displayed");
+		Reporter.log("Confirmation screen displayed as expected");
+		Assert.assertTrue(zelleSendConfirmationScreen.confirmIcon().isEnabled(),"Confirmation Icon not displayed");
+		Reporter.log("Confirmation Icon displayed as expected");
+		Assert.assertTrue(zelleSendConfirmationScreen.doneButtn().isDisplayed(),"Confirmation Done button not displayed");
+		Reporter.log("Confirmation screen displayed as expected");
 
+	 }
 	
-	sendEnterAmountScreen.backButton().click();
-	wait.until(ExpectedConditions.visibilityOf(sendEnterAmountScreen.selectAmountLabel()));
-	Assert.assertTrue(sendEnterAmountScreen.selectAmountLabel().isDisplayed()," Select recipients screen not displayed");
 
-	Reporter.log(" Select recipients screen displayed");
-	
-	
-	
 }
-
-	 
-    
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-

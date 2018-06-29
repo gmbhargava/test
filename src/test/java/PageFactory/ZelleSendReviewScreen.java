@@ -29,6 +29,9 @@ public class ZelleSendReviewScreen extends Basedriver {
 	By sendBtn =By.id("Send");
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
+	By yesBtn=By.xpath("//XCUIElementTypeButton[@name=\"Yes\"]");
+	
+	By noBtn=By.xpath("//XCUIElementTypeButton[@name=\"NO\"]");
 
 
 	public ZelleSendReviewScreen(IOSDriver driver)
@@ -84,8 +87,21 @@ public class ZelleSendReviewScreen extends Basedriver {
 		return nextButton;
 	}
 	
+	public MobileElement yesButtn()
+	{
+		MobileElement nextButton =(MobileElement)driver.findElement(this.yesBtn);
+		
+		
+		return nextButton;
+	}
 	
-    
+	public MobileElement noButtn()
+	{
+		MobileElement nextButton =(MobileElement)driver.findElement(this.noBtn);
+		
+		
+		return nextButton;
+	}
  
 	
 }
