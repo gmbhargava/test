@@ -20,11 +20,11 @@ public class ZelleSelectRecipient extends Basedriver {
 	
 	By zelleBtn=By.xpath("//XCUIElementTypeButton[@name='Zelle']");
 	
-	By zelleRequestBtn=By.xpath("//XCUIElementTypeButton[@name='Request Money']");
+	By zelleRequestBtn=By.xpath("//XCUIElementTypeButton[@name=\"Request Money\"]");
 	
 	By selectFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='SELECT RECIPIENT']");
 	
-	By requestLable=By.xpath("//XCUIElementTypeStaticText[@name=\"Request Money\"]");
+	By requestLable=By.id("SelectRecipientHeader");
 	
 	By recipientAvatar=By.xpath("//XCUIElementTypeCell/XCUIElementTypeStaticText[1]");
 	

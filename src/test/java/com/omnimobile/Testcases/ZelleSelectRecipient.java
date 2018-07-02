@@ -55,6 +55,7 @@ public class ZelleSelectRecipient extends Apploader {
 			loginPage.passwordTextbox().sendKeys(this.password);
 			driver.hideKeyboard();
 			loginPage.loginButton().click();
+			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
@@ -68,8 +69,9 @@ public class ZelleSelectRecipient extends Apploader {
 	}
 
 	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 0)
-	public void verifyHeader() {
+	public void verifyHeader() throws InterruptedException {
 		zelleSelectRecipient.zelleRequestButton().click();
+		Thread.sleep(9000);
 		wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.selectRecipientLabel()));
 		zelleSelectRecipient.selectRecipientLabel().isDisplayed();
 		Assert.assertTrue(zelleSelectRecipient.requestLable().isDisplayed(), "Request Money Header not displayed");

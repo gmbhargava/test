@@ -29,7 +29,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class EnterConfirmationSteps extends Apploader {
+public class RequestConfirmationSteps extends Apploader {
 
 	 String Username;
 	 String password;

@@ -47,8 +47,9 @@ public class SendConfirmationTests extends Apploader {
 				loginPage.passwordTextbox().sendKeys(password);
 				driver.hideKeyboard();
 				loginPage.loginButton().click();
-				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				Thread.sleep(9000);
+				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
+				
 				zelleSelectRecipient.zelleButton().click();
 				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientScreen.zelleSendButton()));
 			} catch (InterruptedException e) {
@@ -91,8 +92,10 @@ public class SendConfirmationTests extends Apploader {
 			sendEnterAmountScreen.reviewButtn().click();
 			wait.until(ExpectedConditions.visibilityOf(zelleSendReviewScreen.reviewFlowLabl()));
 			Assert.assertTrue(zelleSendReviewScreen.sendLabl().isDisplayed()," Review screen not displayed");
-			//this.zelleSendReviewScreen.messageInput().sendKeys("Test Message");
-			//sendEnterAmountScreen.doneButtn().click();
+//			commonUtil.verticalSwipe(20.00, 60.00);
+//		zelleSendReviewScreen.messageInput().sendKeys("Test Message");
+//			
+//			sendEnterAmountScreen.doneButtn().click();
 			Reporter.log(" Review screen displayed as expected");
 		}
 	

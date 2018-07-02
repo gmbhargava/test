@@ -191,6 +191,17 @@ public class commonUtil {
 		return suiteKey;
 
 	}
+	
+//	public static void swipeDown() {
+//		
+//		Dimension size = driver.manage().window().getSize();
+//		int starty=(int)(size.height*0.5);
+//		int endy=(int)(size.height*0.2);
+//		int startx=size.width/2;
+//		driver.swipe(startx,endy,startx,starty,2000);
+//
+//		
+//	}
 
 	public static void login() {
 		loginUtility = new Login(driver);

@@ -1,36 +1,24 @@
+
+// Scripted By Nagarjuna.
+
 package com.omnimobile.Testcases;
 
-import org.testng.Assert;
-import org.testng.Reporter;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.omnimobile.commonUtilities.Apploader;
 import com.omnimobile.commonUtilities.commonUtil;
 
-import PageFactory.Login;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
-import io.appium.java_client.remote.AutomationName;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class EnterAmountTests extends Apploader {
-
+public class RequestEnterAmountTests extends Apploader {
 	 String Username;
 	 String password;
 	 String amount;
@@ -40,9 +28,9 @@ public class EnterAmountTests extends Apploader {
 	public void login() throws IOException 
 	{
 		try {
-			this.Username=commonUtil.loadTestData("Username");
-			this.password=commonUtil.loadTestData("password");
-			this.amount=commonUtil.loadTestData("amount");						
+			Username=commonUtil.loadTestData("Username");
+			password=commonUtil.loadTestData("password");
+			amount=commonUtil.loadTestData("amount");						
 			loginPage.userNameTextBox().sendKeys(this.Username);
 			loginPage.passwordTextbox().sendKeys(this.password);
 			driver.hideKeyboard();
@@ -50,6 +38,7 @@ public class EnterAmountTests extends Apploader {
 		
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
+			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleRequestButton()));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -59,7 +48,7 @@ public class EnterAmountTests extends Apploader {
 	}
 	 
 	 @Test(groups = { "RegressionTest"},priority=0,alwaysRun=true)
-		public void enterAmountVerifyHeader() {
+		public void enterAmountVerifyHeader() throws InterruptedException {
 		
 		 zelleSelectRecipient.zelleRequestButton().click();
 			List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();
@@ -72,7 +61,8 @@ public class EnterAmountTests extends Apploader {
 
 			Reporter.log("Token selected successfully");
 			Reporter.log("Recipient selected As Expected");
-			zelleSelectRecipient.nextBtn().click();
+			Thread.sleep(9000);
+			///zelleSelectRecipient.nextBtn().click();
 			wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
 			Assert.assertTrue(this.enterAmountScreen.requestLable().isDisplayed()," Enter amount header not displayed");
 		

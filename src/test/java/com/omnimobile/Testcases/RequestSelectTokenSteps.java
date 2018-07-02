@@ -28,7 +28,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class SelectTokenSteps extends Apploader {
+public class RequestSelectTokenSteps extends Apploader {
 
 	 String recipientName;
 	String  recipientEmail;
@@ -59,6 +59,7 @@ public class SelectTokenSteps extends Apploader {
 		
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
+			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleRequestButton()));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -74,10 +75,11 @@ public class SelectTokenSteps extends Apploader {
 	
 	
 	@Test  (groups= {"RegressionTest","smokeTest"},priority=0)  
-	public void selectOneRecipient() 
+	public void selectOneRecipient() throws InterruptedException 
 	
 	{
 		zelleSelectRecipient.zelleRequestButton().click();
+		Thread.sleep(500);
 		List<MobileElement> recipients=	zelleSelectRecipient.recipientsDetailsList();
 				
 		Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
