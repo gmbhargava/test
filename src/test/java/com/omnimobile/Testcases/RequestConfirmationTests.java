@@ -29,7 +29,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class RequestConfirmationSteps extends Apploader {
+public class RequestConfirmationTests extends Apploader {
 
 	 String Username;
 	 String password;
@@ -76,16 +76,16 @@ public class RequestConfirmationSteps extends Apploader {
 		Reporter.log("Token selected successfully");
 		Reporter.log("Recipient selected As Expected");
 		zelleSelectRecipient.nextBtn().click();
-		wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-		Assert.assertTrue(this.enterAmountScreen.requestLable().isDisplayed()," Enter amount header not displayed");
-		wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
+		wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+		Assert.assertTrue(this.enterAmountTests.requestLable().isDisplayed()," Enter amount header not displayed");
+		wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
 		
-		enterAmountScreen.enterAmntField().sendKeys(this.amount);
+		enterAmountTests.enterAmntField().sendKeys(this.amount);
 
 		Reporter.log(" Amount Entered succesfully");
-		enterAmountScreen.doneButtn().click();
-		wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.reviewButtn()));
-		enterAmountScreen.reviewButtn().click();
+		enterAmountTests.doneButtn().click();
+		wait.until(ExpectedConditions.visibilityOf(enterAmountTests.reviewButtn()));
+		enterAmountTests.reviewButtn().click();
 
 		wait.until(ExpectedConditions.visibilityOf(zelleRequestConfirmationScreen.confirmFlowLable()));
 		Assert.assertTrue(zelleRequestConfirmationScreen.confirmFlowLable().isDisplayed(),"Confirmation screen not displayed");

@@ -51,7 +51,7 @@ public class SendConfirmationTests extends Apploader {
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				
 				zelleSelectRecipient.zelleButton().click();
-				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientScreen.zelleSendButton()));
+				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.zelleSendButton()));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -64,12 +64,12 @@ public class SendConfirmationTests extends Apploader {
 	 @Test(groups = { "RegressionTest"},priority=0,alwaysRun=true)
 		public void verifyReviewScreen() throws InterruptedException {
 		 	
-		 	zelleSendSelectRecipientScreen.zelleSendButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientScreen.selectRecipientLabel()));
-			List<MobileElement> recipients = zelleSendSelectRecipientScreen.recipientsDetailsList();
+		 	zelleSendSelectRecipientTests.zelleSendButton().click();
+			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.selectRecipientLabel()));
+			List<MobileElement> recipients = zelleSendSelectRecipientTests.recipientsDetailsList();
 			Assert.assertTrue((recipients.size() > 1), "recipients Lists Not Displayed");
 			recipients.get(1).click();
-			Assert.assertTrue((zelleSendSelectRecipientScreen.emailTokens().size()>=1), "recipient Email details Not Displayed");
+			Assert.assertTrue((zelleSendSelectRecipientTests.emailTokens().size()>=1), "recipient Email details Not Displayed");
 			Reporter.log("Recipient Emails Details Displayed As Expected");
 			
 			zelleSelectRecipient.emailTokens().get(0).click();

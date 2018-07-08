@@ -63,8 +63,8 @@ public class RequestEnterAmountTests extends Apploader {
 			Reporter.log("Recipient selected As Expected");
 			Thread.sleep(9000);
 			///zelleSelectRecipient.nextBtn().click();
-			wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-			Assert.assertTrue(this.enterAmountScreen.requestLable().isDisplayed()," Enter amount header not displayed");
+			wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+			Assert.assertTrue(this.enterAmountTests.requestLable().isDisplayed()," Enter amount header not displayed");
 		
 			Reporter.log(" Amount header displayed as expected");
 		}
@@ -72,8 +72,8 @@ public class RequestEnterAmountTests extends Apploader {
 	 @Test(groups = { "RegressionTest" },priority=1)
 		public void verifyDefaultAmountHint() {
 		
-		 	wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-			String amountHint=enterAmountScreen.enterAmntField().getAttribute("value");
+		 	wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+			String amountHint=enterAmountTests.enterAmntField().getAttribute("value");
 			Assert.assertTrue(amountHint.equalsIgnoreCase("0.00"),"Amount deault hint not displayed");
 	
 			Reporter.log(" Amount deault hint Displayed as expected");
@@ -82,9 +82,9 @@ public class RequestEnterAmountTests extends Apploader {
 	 @Test(groups = { "RegressionTest"},priority=2)
 		public void verifyKeyBoard() {
 		
-		 	wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-		 	enterAmountScreen.enterAmntField().click();
-			Assert.assertTrue(enterAmountScreen.keyBoard().isDisplayed(),"Amount keyboard not displayed");
+		 	wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+		 	enterAmountTests.enterAmntField().click();
+			Assert.assertTrue(enterAmountTests.keyBoard().isDisplayed(),"Amount keyboard not displayed");
 	
 			Reporter.log(" Amount keyboard Displayed as expected");
 		}
@@ -93,11 +93,11 @@ public class RequestEnterAmountTests extends Apploader {
 		public void enterAmountAsZero() {
 		
 			
-			wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-			enterAmountScreen.enterAmntField().sendKeys("0.00");
+			wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+			enterAmountTests.enterAmntField().sendKeys("0.00");
 			Reporter.log(" Amount Entered as zero succesfully");
-			enterAmountScreen.doneButtn().click();
-			Assert.assertTrue(this.enterAmountScreen.reviewButtn().getAttribute("enabled").equalsIgnoreCase("false"),"Review button not disabled");
+			enterAmountTests.doneButtn().click();
+			Assert.assertTrue(this.enterAmountTests.reviewButtn().getAttribute("enabled").equalsIgnoreCase("false"),"Review button not disabled");
 			Reporter.log(" Rview button disabled for zero amount as expected");
 		}
 
@@ -107,11 +107,11 @@ public class RequestEnterAmountTests extends Apploader {
 		public void enterAmountAsMinimum() {
 		
 			
-			wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-			enterAmountScreen.enterAmntField().sendKeys("0.01");
+			wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+			enterAmountTests.enterAmntField().sendKeys("0.01");
 			Reporter.log(" Amount Entered as zero succesfully");
-			enterAmountScreen.doneButtn().click();
-			Assert.assertTrue(this.enterAmountScreen.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
+			enterAmountTests.doneButtn().click();
+			Assert.assertTrue(this.enterAmountTests.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
 			Reporter.log(" Rview button enabled for minimum amount as expected");
 		}
 	 
@@ -119,12 +119,12 @@ public class RequestEnterAmountTests extends Apploader {
 	public void enterAmount() {
 	
 		
-		wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-		enterAmountScreen.enterAmntField().clear();
-		enterAmountScreen.enterAmntField().sendKeys(this.amount);
-		enterAmountScreen.doneButtn().click();
+		wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+		enterAmountTests.enterAmntField().clear();
+		enterAmountTests.enterAmntField().sendKeys(this.amount);
+		enterAmountTests.doneButtn().click();
 		Reporter.log(" Amount Entered succesfully");
-		Assert.assertTrue(this.enterAmountScreen.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
+		Assert.assertTrue(this.enterAmountTests.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
 		Reporter.log(" Rview button enabled for maximum amount as expected");
 		
 	}
@@ -135,8 +135,8 @@ public class RequestEnterAmountTests extends Apploader {
 @Test(groups = { "RegressionTest"},priority=6)
 public void verifyBackButton() {
 
-	wait.until(ExpectedConditions.visibilityOf(enterAmountScreen.selectAmountLabel()));
-	enterAmountScreen.backButton().click();
+	wait.until(ExpectedConditions.visibilityOf(enterAmountTests.selectAmountLabel()));
+	enterAmountTests.backButton().click();
 	wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.selectRecipientLabel()));
 	Assert.assertTrue(zelleSelectRecipient.selectRecipientLabel().isDisplayed()," Select recipients screen not displayed");
 

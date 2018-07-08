@@ -50,7 +50,7 @@ public class SendEnterAmountTests extends Apploader {
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				Thread.sleep(9000);
 				zelleSelectRecipient.zelleButton().click();
-				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientScreen.zelleSendButton()));
+				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.zelleSendButton()));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -60,15 +60,19 @@ public class SendEnterAmountTests extends Apploader {
 			
 		}
 	 
+	 
+	 //   OMAV-T1648 (1.0)-Money_Zelle_UI_Send_EnterAmount_Header
+	 
+	 
 	 @Test(groups = { "RegressionTest"},priority=0,alwaysRun=true)
 		public void enterAmountVerifyHeader() {
 		 	
-		 	zelleSendSelectRecipientScreen.zelleSendButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientScreen.selectRecipientLabel()));
-			List<MobileElement> recipients = zelleSendSelectRecipientScreen.recipientsDetailsList();
+		 	zelleSendSelectRecipientTests.zelleSendButton().click();
+			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.selectRecipientLabel()));
+			List<MobileElement> recipients = zelleSendSelectRecipientTests.recipientsDetailsList();
 			Assert.assertTrue((recipients.size() > 1), "recipients Lists Not Displayed");
 		//	recipients.get(1).click();
-			Assert.assertTrue((zelleSendSelectRecipientScreen.emailTokens().size()>=1), "recipient Email details Not Displayed");
+			Assert.assertTrue((zelleSendSelectRecipientTests.emailTokens().size()>=1), "recipient Email details Not Displayed");
 			Reporter.log("Recipient Emails Details Displayed As Expected");
 			
 	//		zelleSelectRecipient.emailTokens().get(0).click();
@@ -81,6 +85,9 @@ public class SendEnterAmountTests extends Apploader {
 			Reporter.log(" Amount header displayed as expected");
 		}
 	 
+	 
+	 //   OMAV-T1644 (1.0)-Money_Zelle_UI_Send_EnterAmount_DefaultHintAmount
+	 
 	 @Test(groups = { "RegressionTest" },priority=1)
 		public void verifyDefaultAmountHint() {
 		
@@ -91,6 +98,8 @@ public class SendEnterAmountTests extends Apploader {
 			Reporter.log(" Amount deault hint Displayed as expected");
 		}
 	 
+	 //      OMAV-T1649 (1.0)-Money_Zelle_UI_Send_EnterAmount_Keyboard
+	 
 	 @Test(groups = { "RegressionTest"},priority=2)
 		public void verifyKeyBoard() {
 		
@@ -100,6 +109,9 @@ public class SendEnterAmountTests extends Apploader {
 	
 			Reporter.log(" Amount keyboard Displayed as expected");
 		}
+	 
+	 
+	   //  OMAV-T1647 (1.0)-Money_Zelle_UI_Send_EnterAmount_EnterZero
 	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=3)
 		public void enterAmountAsZero() {
@@ -115,6 +127,9 @@ public class SendEnterAmountTests extends Apploader {
 
 	 
 	 
+	 
+	    //     OMAV-T1646 (1.0)-Money_Zelle_UI_Send_EnterAmount_EnterMinimumAmount
+	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=4)
 		public void enterAmountAsMinimum() {
 		
@@ -126,6 +141,10 @@ public class SendEnterAmountTests extends Apploader {
 			Assert.assertTrue(this.sendEnterAmountScreen.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
 			Reporter.log(" Rview button enabled for minimum amount as expected");
 		}
+	 
+	 
+	 
+	 
 	 
 	@Test(groups = { "RegressionTest", "smokeTest" },priority=5)
 	public void enterAmount() {

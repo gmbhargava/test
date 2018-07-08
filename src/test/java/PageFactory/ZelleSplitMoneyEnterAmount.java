@@ -1,6 +1,7 @@
 package PageFactory;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
@@ -15,15 +16,18 @@ import com.omnimobile.commonUtilities.Basedriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 
-public class SendEnterAmountScreen extends Basedriver {
+public class ZelleSplitMoneyEnterAmount extends Basedriver {
 
-	
+	By nextBtn =By.id("Next");
 	By enterAmountFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"ENTER AMOUNT\"]");
 	
-	By sendLable=By.xpath("//XCUIElementTypeStaticText[@name='Send Money']");
+	By sendLable=By.id("EnterAmountTitle");
+		
+	By amountField=By.id("EnterAmountTextField");
+	By multiUserAvatarsImg=By.id("Avatar_Multi User");
+	By receipientsAvatrs=By.xpath("//XCUIElementTypeStaticText[@name=\"RecipientName\"]/following-sibling::XCUIElementTypeStaticText[1]");
 	
-	
-	By amountField=By.xpath("//XCUIElementTypeTextField");
+	By spiltAmountFields=By.name("AmountTextFieldToBeEntered");
 	
 	By amountKeyBoard=By.className("XCUIElementTypeKeyboard");
 	
@@ -37,7 +41,7 @@ public class SendEnterAmountScreen extends Basedriver {
 		private By viewTransctionbtn;
 	
 	
-	public SendEnterAmountScreen(IOSDriver driver)
+	public ZelleSplitMoneyEnterAmount(IOSDriver driver)
 	{
 		super(driver);
 	}
@@ -50,7 +54,7 @@ public class SendEnterAmountScreen extends Basedriver {
 		return selectLable;
 	}
 	
-	public MobileElement sendMoneyLable()
+	public MobileElement splitMoneyLable()
 	{
 		MobileElement requestLabl=(MobileElement) driver.findElement(sendLable);
 		return requestLabl;
@@ -62,6 +66,20 @@ public class SendEnterAmountScreen extends Basedriver {
 		return filterFiel;
 	}
 	
+	
+	
+	public 	List<MobileElement> splitAmountFileds()
+	{
+		List<MobileElement> icon=(List<MobileElement>) driver.findElements(this.spiltAmountFields);
+		return icon;
+	}
+	
+	
+	public 	List<MobileElement> splitRecipientsAvtars()
+	{
+		List<MobileElement> icon=(List<MobileElement>) driver.findElements(this.receipientsAvatrs);
+		return icon;
+	}
 	
 	public MobileElement keyBoard()
 	{
@@ -75,6 +93,13 @@ public class SendEnterAmountScreen extends Basedriver {
 		MobileElement nextButton =(MobileElement)driver.findElement(this.doneBtn);
 		return nextButton;
 	}
+	
+	public MobileElement nextButtn()
+	{
+		MobileElement nextButton =(MobileElement)driver.findElement(this.nextBtn);
+		return nextButton;
+	}
+	
 	
 	public MobileElement reviewButtn()
 	{

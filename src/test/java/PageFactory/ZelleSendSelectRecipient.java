@@ -13,7 +13,7 @@ import com.omnimobile.commonUtilities.Basedriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 
-public class ZelleSendSelectRecipientScreen extends Basedriver {
+public class ZelleSendSelectRecipient extends Basedriver {
 
 	By viewTransactions=By.id("GreetingLabel");
 			
@@ -31,7 +31,7 @@ public class ZelleSendSelectRecipientScreen extends Basedriver {
 	//By recipientAvatorView=By.xpath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientAvatarView\"])[1]");
 	
 	By filterField=By.id("Filter by name, phone, email");
-	
+	By doneBtn =By.xpath("//XCUIElementTypeButton[@name=\"Done\"]");
 	By recipientsTable=By.xpath("//XCUIElementTypeTable");
 	
 	By recipientDetails=By.xpath("//XCUIElementTypeTable//XCUIElementTypeCell");
@@ -61,9 +61,12 @@ public class ZelleSendSelectRecipientScreen extends Basedriver {
 
 	private By recipientEmail;
 
+
+	public Object cancel;
+
 	
 	
-	public ZelleSendSelectRecipientScreen(IOSDriver driver)
+	public ZelleSendSelectRecipient(IOSDriver driver)
 	{
 		super(driver);
 	}

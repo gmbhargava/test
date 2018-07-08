@@ -22,6 +22,7 @@ import PageFactory.Login;
 import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -192,16 +193,11 @@ public class commonUtil {
 
 	}
 	
-//	public static void swipeDown() {
-//		
-//		Dimension size = driver.manage().window().getSize();
-//		int starty=(int)(size.height*0.5);
-//		int endy=(int)(size.height*0.2);
-//		int startx=size.width/2;
-//		driver.swipe(startx,endy,startx,starty,2000);
-//
-//		
-//	}
+	public static void swipeDown(MobileElement scroll) {
+				//MobileElement scroll =(MobileElement) driver.findElementsByXPath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[16]");
+		TouchAction ac3 = new TouchAction(driver);
+		ac3.longPress(scroll).moveTo(50, 300).perform();
+	}
 
 	public static void login() {
 		loginUtility = new Login(driver);
