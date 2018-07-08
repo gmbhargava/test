@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [OmniMobileApp-Team2]">
+<suite verbose="0" name="Failed suite [OmniMobileApp]">
+  <listeners>
+    <listener class-name="com.omnimobile.listeners.listener"/>
+  </listeners>
   <test name="OmniApp(failed)">
-    <groups>
-      <run>
-        <include name="RegressionTest"/>
-      </run>
-    </groups>
     <classes>
-      <class name="com.omnimobile.Testcases.AccountAccess">
+      <class name="com.omnimobile.Testcases.TransactionHistory">
         <methods>
+          <include name="switchBetweenAccounts"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="showPassword"/>
+          <include name="selectSpecificTransaction"/>
+          <include name="transactionListInitialLoad"/>
+          <include name="viewTransactionsHistory"/>
         </methods>
-      </class> <!-- com.omnimobile.Testcases.AccountAccess -->
+      </class> <!-- com.omnimobile.Testcases.TransactionHistory -->
     </classes>
   </test> <!-- OmniApp(failed) -->
-</suite> <!-- Failed suite [OmniMobileApp-Team2] -->
+</suite> <!-- Failed suite [OmniMobileApp] -->

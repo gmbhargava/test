@@ -29,7 +29,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class ZelleSelectRecipientTests extends Apploader {
+public class ZelleRequestSelectRecipientTests extends Apploader {
 
 	String recipientName;
 	String recipientEmail;
@@ -110,8 +110,36 @@ public class ZelleSelectRecipientTests extends Apploader {
 		Reporter.log("Recipient Avators Displayed As Expected");
 
 	}
-
+	
+//  OMAV-T1044 (1.0)-Money_Zelle_UI_Request_SelectRecipient_AvatarInitials
+	
+	
+	
 	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 3)
+	public void verifyRecipientAvatarIntials() {
+		zelleSelectRecipient.selectRecipientLabel().isDisplayed();
+		List<MobileElement> recipients = zelleSelectRecipient.recipientsAvatars();
+		String avatarIntials=recipients.get(1).getAttribute("value");
+		
+		Assert.assertTrue((avatarIntials.length() >= 1), "recipient Avators intials  Not Displayed");
+		Reporter.log("Recipient Avators intials "+avatarIntials+" Displayed As Expected");
+
+	}
+	
+	//   OMAV-T1043 (1.0)-Money_Zelle_UI_Request_SelectRecipient_PreconditionsMet
+		
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 4)
+		public void verifyRecipientsPreconditionsMet() {
+
+			zelleSelectRecipient.selectRecipientLabel().isDisplayed();
+			List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();
+			Assert.assertTrue((recipients.size() > 1), "recipient Details Not Displayed");
+			Reporter.log("Recipient Details Displayed As Expected");
+
+		}
+		
+
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 5)
 	public void verifyRecipientSearchByName() throws InterruptedException {
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
@@ -129,7 +157,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 		
 	//     OMAV-T1692 (1.0)-Money_Zelle_UI_Request_SelectRecipient_SearchByName_SpanishCharacters
 		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 6)
 		public void verifyRecipientSearchBySpanishCharacters() throws InterruptedException {
 			zelleSelectRecipient.filterField().clear();
 			zelleSelectRecipient.filterField().click();
@@ -144,7 +172,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 		}
 		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 7)
 		public void verifyRecipientSearchByEmailNumber() throws InterruptedException {
 			zelleSelectRecipient.filterField().clear();
 			zelleSelectRecipient.filterField().click();
@@ -159,34 +187,12 @@ public class ZelleSelectRecipientTests extends Apploader {
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	//   OMAV-T1043 (1.0)-Money_Zelle_UI_Request_SelectRecipient_PreconditionsMet
-		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 7)
-		public void verifyRecipientsPreconditionsMet() {
-
-			zelleSelectRecipient.selectRecipientLabel().isDisplayed();
-			List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();
-			Assert.assertTrue((recipients.size() > 1), "recipient Details Not Displayed");
-			Reporter.log("Recipient Details Displayed As Expected");
-
-		}
-		
+	
 		
 
 	
 
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 4)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 8)
 	public void verifyRecipientSearchByFirstName() throws InterruptedException {
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
@@ -201,7 +207,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 	}
 
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 5)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 9)
 	public void verifyRecipientSearchByLastName() throws InterruptedException {
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
@@ -216,7 +222,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 	}
 
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 6)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
 	public void verifyRecipientSearchByEmail() throws InterruptedException {
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
@@ -231,7 +237,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 	}
 
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 7)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
 	public void verifyRecipientSearchByPhone() throws InterruptedException {
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
@@ -246,7 +252,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 	}
 
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 8)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 12)
 	public void verifyRecipientSpecialCharEmail() throws InterruptedException {
 		zelleSelectRecipient.filterField().clear();
 		zelleSelectRecipient.filterField().click();
@@ -261,27 +267,14 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 	}
 	
-	//    OMAV-T1044 (1.0)-Money_Zelle_UI_Request_SelectRecipient_AvatarInitials
 	
-	
-	
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 1)
-	public void verifyRecipientAvatarIntials() {
-		zelleSelectRecipient.selectRecipientLabel().isDisplayed();
-		List<MobileElement> recipients = zelleSelectRecipient.recipientsAvatars();
-		String avatarIntials=recipients.get(1).getAttribute("value");
-		
-		Assert.assertTrue((avatarIntials.length() >= 1), "recipient Avators intials  Not Displayed");
-		Reporter.log("Recipient Avators intials "+avatarIntials+" Displayed As Expected");
-
-	}
 	
 	
 	
 	
 	
 
-	// @Test (groups= {"RegressionTest","smokeTest"},priority=10)
+	// @Test (groups= {"RegressionTest","smokeTest"},priority=13)
 	// public void selectRecipient()
 	// {
 	// List<MobileElement> recipients= zelleSelectRecipient.recipientsDetailsList();
@@ -293,7 +286,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 	// Reporter.log("Recipient selected As Expected");
 	// }
 
-	// @Test (groups= {"RegressionTest","smokeTest"},priority=11)
+	// @Test (groups= {"RegressionTest","smokeTest"},priority=14)
 	// public void verifySelectIcon()
 	// {
 	// Assert.assertTrue((zelleSelectRecipient.slectIocn().isEnabled()), "recipients
@@ -302,7 +295,7 @@ public class ZelleSelectRecipientTests extends Apploader {
 
 	// }
 
-	// @Test (groups= {"RegressionTest"},priority=12)
+	// @Test (groups= {"RegressionTest"},priority=15)
 	// public void verifyBackButton() throws InterruptedException
 	// {
 	// zelleSelectRecipient.backButton().click();

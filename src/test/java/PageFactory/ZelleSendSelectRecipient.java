@@ -24,7 +24,7 @@ public class ZelleSendSelectRecipient extends Basedriver {
 	
 	By selectFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='SELECT RECIPIENT']");
 	
-	By sendLable=By.xpath("//XCUIElementTypeStaticText[@name='Send Money']");
+	By sendLable=By.id("SelectRecipientHeader");
 	
 	By recipientAvatar=By.xpath("//XCUIElementTypeCell/XCUIElementTypeStaticText[1]");
 	

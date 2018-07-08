@@ -77,24 +77,10 @@ public class ZelleSendSelectRecipientNegativeTests extends Apploader {
 		
 	 
    
-		
-			
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 0)
-			public void verifyZelleSendSelectRecipientTests() throws InterruptedException {
-				
-				Assert.assertTrue(zelleSelectRecipient.zelleButton().isDisplayed(), " Dashboard page not displayed");
-				Reporter.log("Dashboard screen displayed as expected ");
-				Thread.sleep(9000);
-				zelleSelectRecipient.zelleButton().click();
-				wait.until(ExpectedConditions.visibilityOf(zelleSplitMoney.zelleSplitButton()));
-				zelleSendSelectRecipientTests.zelleSendButton().click();
-				
-			}
-			
 				
 //		 	 
 			
-				@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+				@Test(groups = { "RegressionTest", "smokeTest" }, priority = 0)
 				public void verifyRecipientSearchByEmailNoMatch() throws InterruptedException {
 					zelleSendSelectRecipientTests.filterField().clear();
 					zelleSendSelectRecipientTests.filterField().click();
@@ -110,7 +96,7 @@ public class ZelleSendSelectRecipientNegativeTests extends Apploader {
 				
 //			 	 
 				
-				@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+				@Test(groups = { "RegressionTest", "smokeTest" }, priority = 1)
 				public void verifyRecipientSearchByNameNoMatch() throws InterruptedException {
 					zelleSendSelectRecipientTests.filterField().clear();
 					zelleSendSelectRecipientTests.filterField().click();
@@ -127,7 +113,7 @@ public class ZelleSendSelectRecipientNegativeTests extends Apploader {
 			
 		// 	  
 			
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 2)
 			public void verifyRecipientSearchByPhoneNoMatch() throws InterruptedException {
 				zelleSendSelectRecipientTests.filterField().clear();
 				zelleSendSelectRecipientTests.filterField().click();
@@ -141,7 +127,7 @@ public class ZelleSendSelectRecipientNegativeTests extends Apploader {
 
 			}
 			
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 3)
 			public void verifyRecipientSearchByUnEnrolledNumber() throws InterruptedException {
 				zelleSendSelectRecipientTests.filterField().clear();
 				zelleSendSelectRecipientTests.filterField().click();
@@ -152,23 +138,6 @@ public class ZelleSendSelectRecipientNegativeTests extends Apploader {
 
 				Assert.assertTrue((recipients.size() > 1), "recipients details Not Displayed As Per the Filter");
 				Reporter.log("Recipients Details "+recipients.size() +" Displayed As per the unEnrolled number in the Applied Filtered");
-
-			}
-			
-			
-			//  
-			
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
-			public void verifyRecipientSearchByEmailNumber() throws InterruptedException {
-				zelleSendSelectRecipientTests.filterField().clear();
-				zelleSendSelectRecipientTests.filterField().click();
-				zelleSendSelectRecipientTests.filterField().sendKeys("123");
-				Reporter.log("Email entered in the  Filter");
-				Thread.sleep(4000);
-				List<MobileElement> recipients = zelleSendSelectRecipientTests.recipientsDetailsList();
-
-				Assert.assertTrue((recipients.size() > 1), "recipients details Not Displayed As Per the Filter");
-				Reporter.log("Recipients Details "+recipients.size() +" Displayed As per the email number in the Applied Filtered");
 
 			}
 			

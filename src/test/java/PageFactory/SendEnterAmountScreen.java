@@ -20,7 +20,7 @@ public class SendEnterAmountScreen extends Basedriver {
 	
 	By enterAmountFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"ENTER AMOUNT\"]");
 	
-	By sendLable=By.xpath("//XCUIElementTypeStaticText[@name='Send Money']");
+	By sendLable=By.id("EnterAmountTitle");
 	
 	
 	By amountField=By.xpath("//XCUIElementTypeTextField");

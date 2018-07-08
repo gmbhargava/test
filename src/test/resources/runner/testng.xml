@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="OmniMobileApp-Team2" >
+<suite name="OmniMobileApp-Sample" >
 
-<Listeners>
-<Listener class-name="com.omnimobile.listeners.listener.class"/>
-</Listeners>
-  <test  name="OmniApp">
+
+  <test  name="OmniApp-SmokeTest">
   <groups>
    <run>
-      <include name="RegressionTest"/>
+      <include name="Regression"/>
    </run>
   </groups>
     <classes>
-      <class name="com.omnimobile.Testcases.AccountAccess"/>
+      <class name="com.omnimobile.Testcases.TransactionHistory"/>
     </classes>
   </test> 
 </suite> 
+

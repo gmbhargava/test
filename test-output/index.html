@@ -101,12 +101,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.omnimobile.Testcases.SendConfirmationTests" hash-for-method="verifyReviewScreen">verifyReviewScreen</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.omnimobile.Testcases.ZelleSendConfirmationTests" hash-for-method="verifyReviewScreen">verifyReviewScreen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.omnimobile.Testcases.SendConfirmationTests" hash-for-method="verifySendMoneyConfirm">verifySendMoneyConfirm</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.omnimobile.Testcases.ZelleSendConfirmationTests" hash-for-method="verifySendMoneyConfirm">verifySendMoneyConfirm</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -124,7 +124,7 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.omnimobile.Testcases.SendConfirmationTests</span>
+              <span class="class-name">com.omnimobile.Testcases.ZelleSendConfirmationTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -146,7 +146,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/lh/3jssk7fs3836q4gj966j_yzhf0f776/T/testng-eclipse-1271810166/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/lh/3jssk7fs3836q4gj966j_yzhf0f776/T/testng-eclipse--301475966/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -155,7 +155,7 @@
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.omnimobile.Testcases.SendConfirmationTests&quot;/&gt;
+      &lt;class name=&quot;com.omnimobile.Testcases.ZelleSendConfirmationTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -218,17 +218,17 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyReviewScreen')
-data.setCell(0, 2, 'com.omnimobile.Testcases.SendConfirmationTests')
-data.setCell(0, 3, 29044);
+data.setCell(0, 2, 'com.omnimobile.Testcases.ZelleSendConfirmationTests')
+data.setCell(0, 3, 35282);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifySendMoneyConfirm')
-data.setCell(1, 2, 'com.omnimobile.Testcases.SendConfirmationTests')
-data.setCell(1, 3, 10806);
+data.setCell(1, 2, 'com.omnimobile.Testcases.ZelleSendConfirmationTests')
+data.setCell(1, 3, 9318);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 39 seconds</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -240,6 +240,14 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
+              <span class="reporter-method-name">verifySendMoneyConfirm</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Confirmation screen displayed as expected</span>
+                <span class="reporter-method-output">Confirmation Icon displayed as expected</span>
+                <span class="reporter-method-output">Confirmation screen displayed as expected</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
               <span class="reporter-method-name">verifyReviewScreen</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">Recipient Emails Details Displayed As Expected</span>
@@ -249,14 +257,6 @@ return data;
                 <span class="reporter-method-output"> Amount Entered succesfully</span>
                 <span class="reporter-method-output"> Rview button enabled for maximum amount as expected</span>
                 <span class="reporter-method-output"> Review screen displayed as expected</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">verifySendMoneyConfirm</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Confirmation screen displayed as expected</span>
-                <span class="reporter-method-output">Confirmation Icon displayed as expected</span>
-                <span class="reporter-method-output">Confirmation screen displayed as expected</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -274,26 +274,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.omnimobile.Testcases.SendConfirmationTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.omnimobile.Testcases.ZelleSendConfirmationTests</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">6536 ms</span>
+                <span class="method-start">7412 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">verifyReviewScreen</span>
-                <span class="method-start">27161 ms</span>
+                <span class="method-start">27955 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifySendMoneyConfirm</span>
-                <span class="method-start">56207 ms</span>
+                <span class="method-start">63238 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">67031 ms</span>
+                <span class="method-start">72977 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

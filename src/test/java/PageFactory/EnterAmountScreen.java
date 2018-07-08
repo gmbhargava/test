@@ -20,7 +20,7 @@ public class EnterAmountScreen extends Basedriver {
 	
 	By enterAmountFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"ENTER AMOUNT\"]");
 	
-	By requestLable=By.xpath("//XCUIElementTypeStaticText[@name=\"Request Money\"]");
+	By requestLable=By.id("EnterAmountTitle");
 	
 	
 	By amountField=By.xpath("//XCUIElementTypeTextField");
@@ -32,6 +32,8 @@ public class EnterAmountScreen extends Basedriver {
 	By backBtn=By.id("backArrow 1");
 	
 	By reviewBtn= By.id("Review");
+	
+	By SendBtn= By.id("Review");
 
 		private By viewTransctionbtn;
 	

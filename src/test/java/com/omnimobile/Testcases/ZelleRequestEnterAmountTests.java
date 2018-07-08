@@ -18,7 +18,7 @@ import com.omnimobile.commonUtilities.commonUtil;
 import io.appium.java_client.MobileElement;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class RequestEnterAmountTests extends Apploader {
+public class ZelleRequestEnterAmountTests extends Apploader {
 	 String Username;
 	 String password;
 	 String amount;

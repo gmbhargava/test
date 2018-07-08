@@ -19,14 +19,14 @@ public class ZelleSendReviewScreen extends Basedriver {
 	
 	By reviewFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"REVIEW\"]");
 	
-	By sendLable=By.xpath("//XCUIElementTypeStaticText[@name=\"Send Money\"]");
+	By sendLable=By.id("ReviewAmountHeader");
 	
 	
 	By confirmationIcon=By.id("icon-checkmark");
 	
 	
 	By msgInput=By.xpath("//XCUIElementTypeTextView");
-	By sendBtn =By.id("Send");
+	By sendBtn =By.id("SendOrRequestMoneyButton");
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
 	By yesBtn=By.xpath("//XCUIElementTypeButton[@name=\"Yes\"]");

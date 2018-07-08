@@ -61,8 +61,8 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 				loginPage.loginButton().click();
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				Thread.sleep(9000);
-				zelleSelectRecipient.zelleButton().click();
-				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.zelleSendButton()));
+//				zelleSelectRecipient.zelleButton().click();
+//				wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.zelleSendButton()));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -83,16 +83,11 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.zelleSendButton()));
 			zelleSendSelectRecipientTests.zelleSendButton().click();
 			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.selectRecipientLabel()));
-			zelleSendSelectRecipientTests.cancelTokensButton().click();
-			Reporter.log(" Clicked on  Cancel button as expected ");
-			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
-			
-			Assert.assertTrue(zelleSelectRecipient.zelleButton().isDisplayed(), " Dashboard page not displayed");
-			Reporter.log("Dashboard screen displayed as expected ");
+		
+			Assert.assertTrue(zelleSendSelectRecipientTests.selectRecipientLabel().isDisplayed(), " Send page not displayed");
+			Reporter.log("Send screen displayed as expected ");
 			Thread.sleep(9000);
-			zelleSelectRecipient.zelleButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.zelleSendButton()));
-			zelleSplitMoney.zelleSplitButton().click();
+			
 
 	 }
 	
@@ -107,10 +102,9 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 
 	 
 	 
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=0) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=1) 
 	public void verifyHeader() 
 	{
-		zelleSendSelectRecipientTests.zelleSendButton().click();
 		wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.selectRecipientLabel()));
 		zelleSendSelectRecipientTests.selectRecipientLabel().isDisplayed();
 		Assert.assertTrue(zelleSendSelectRecipientTests.zelleSendLable().isDisplayed(), "Send Money Header not displayed");
@@ -120,7 +114,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	
 	//    OMAV-T1641 (1.0)-Money_Zelle_UI_Send_SelectRecipient_Select
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=1)  
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=2)  
 	public void verifyRecipients() 
 	{
 	
@@ -145,7 +139,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 //     OMAV-T1625 (1.0)-Money_Zelle_UI_Send_SelectRecipient_AvatarInitials
 	
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=2)  
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=3)  
 	public void verifyRecipientAvatar() 
 	{
 		zelleSendSelectRecipientTests.selectRecipientLabel().isDisplayed();
@@ -158,7 +152,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	
 	
 	
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 2)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 4)
 	public void verifyRecipientAvatarPhoto() {
 		zelleSendSelectRecipientTests.selectRecipientLabel().isDisplayed();
 		List<MobileElement> recipients = zelleSendSelectRecipientTests.recipientsAvatars();
@@ -168,7 +162,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	}
 	
 	
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 7)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 5)
 	public void verifyRecipientsPreconditionsMet() {
 
 		zelleSendSelectRecipientTests.selectRecipientLabel().isDisplayed();
@@ -186,7 +180,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	
 	
 
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=3) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=6) 
 	public void verifyRecipientSearchByName() throws InterruptedException 
 	{
 		zelleSendSelectRecipientTests.filterField().clear();
@@ -202,7 +196,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 
 	}
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=4) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=7) 
 	public void verifyRecipientSearchByFirstName() throws InterruptedException 
 	{
 		zelleSendSelectRecipientTests.filterField().clear();
@@ -219,7 +213,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 
 	}
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=5) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=8) 
 	public void verifyRecipientSearchByLastName() throws InterruptedException 
 	{
 		zelleSendSelectRecipientTests.filterField().clear();
@@ -239,7 +233,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	
 	
 
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 9)
 	public void verifyRecipientSearchBySpanishCharacters() throws InterruptedException {
 		zelleSendSelectRecipientTests.filterField().clear();
 		zelleSendSelectRecipientTests.filterField().click();
@@ -259,7 +253,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	//  OMAV-T1630 (1.0)-Money_Zelle_UI_Send_SelectRecipient_SearchByEmail
 	
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=6) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=10) 
 	public void verifyRecipientSearchByEmail() throws InterruptedException 
 	{
 		zelleSendSelectRecipientTests.filterField().clear();
@@ -279,7 +273,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	
 	//      OMAV-T1638 (1.0)-Money_Zelle_UI_Send_SelectRecipient_SearchByPhone
 	
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=7) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=11) 
 	public void verifyRecipientSearchByPhone() throws InterruptedException 
 	{
 		zelleSendSelectRecipientTests.filterField().clear();
@@ -300,7 +294,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
        //      OMAV-T1635 (1.0)-Money_Zelle_UI_Send_SelectRecipient_SearchByEmail_SpecialCharacters
 	
 
-	@Test  (groups= {"RegressionTest","smokeTest"},priority=8) 
+	@Test  (groups= {"RegressionTest","smokeTest"},priority=12) 
 	public void verifyRecipientSpecialCharEmail() throws InterruptedException 
 	{
 		zelleSendSelectRecipientTests.filterField().clear();
@@ -318,7 +312,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	}
 
 	
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 13)
 	public void verifyRecipientSearchByEmailNumber() throws InterruptedException {
 		zelleSendSelectRecipientTests.filterField().clear();
 		zelleSendSelectRecipientTests.filterField().click();
@@ -336,7 +330,7 @@ public class ZelleSendSelectRecipientTests extends Apploader {
 	
 	
 	
-	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 9)
+	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 14)
 	public void verifyRecipientSearchByEmailCasing() throws InterruptedException {
 		zelleSendSelectRecipientTests.filterField().clear();
 		zelleSendSelectRecipientTests.filterField().click();

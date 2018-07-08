@@ -29,7 +29,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
-public class SendConfirmationTests extends Apploader {
+public class ZelleSendConfirmationTests extends Apploader {
 
 	 public static String Username;
 	 public static String password;

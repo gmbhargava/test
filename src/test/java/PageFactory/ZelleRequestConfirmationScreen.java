@@ -25,7 +25,7 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	
 	
 	
-	By doneBtn =By.id("Done");
+	By doneBtn =By.id("DoneButton");
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
 

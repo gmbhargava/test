@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.omnimobile.Testcases.AccountAccess">
+      <class name="com.omnimobile.Testcases.ZelleSendSelectRecipientTests">
         <methods>
+          <include name="verifyHeader"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="showPassword"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.omnimobile.Testcases.AccountAccess -->
+      </class> <!-- com.omnimobile.Testcases.ZelleSendSelectRecipientTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

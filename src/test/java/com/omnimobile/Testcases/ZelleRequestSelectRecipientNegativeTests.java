@@ -32,7 +32,7 @@ package com.omnimobile.Testcases;
 	import io.appium.java_client.remote.MobileCapabilityType;
 
 	//@Listeners({com.omnimobile.listeners.listener.class});
-	public class ZelleSelectRecipientNegativeTests extends Apploader {
+	public class ZelleRequestSelectRecipientNegativeTests extends Apploader {
 
 		String recipientName;
 		String recipientEmail;
@@ -95,7 +95,7 @@ package com.omnimobile.Testcases;
 			
 //	 	    OMAV-T1370 (1.0)-Money_Zelle_UI_Request_SelectRecipient_SearchByEmail_NoMatch
 		
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 1)
 			public void verifyRecipientSearchByEmailNoMatch() throws InterruptedException {
 				zelleSelectRecipient.filterField().clear();
 				zelleSelectRecipient.filterField().click();
@@ -111,7 +111,7 @@ package com.omnimobile.Testcases;
 			
 //	           OMAV-T1369 (1.0)-Money_Zelle_UI_Request_SelectRecipient_SearchByName_NoMatch 
 			
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 2)
 			public void verifyRecipientSearchByNameNoMatch() throws InterruptedException {
 				zelleSelectRecipient.filterField().clear();
 				zelleSelectRecipient.filterField().click();
@@ -128,7 +128,7 @@ package com.omnimobile.Testcases;
 		
 	// 	 OMAV-T1368 (1.0)-Money_Zelle_UI_Request_SelectRecipient_SearchByPhone_NoMatch
 		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 3)
 		public void verifyRecipientSearchByPhoneNoMatch() throws InterruptedException {
 			zelleSelectRecipient.filterField().clear();
 			zelleSelectRecipient.filterField().click();
@@ -144,11 +144,11 @@ package com.omnimobile.Testcases;
 		
 	//    OMAV-T1371 (1.0)-Money_Zelle_UI_Request_SelectRecipient_SearchByPhone_UnenrolledPhone
 		
-	/*	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 4)
 		public void verifyRecipientSearchByUnEnrolledNumber() throws InterruptedException {
 			zelleSelectRecipient.filterField().clear();
 			zelleSelectRecipient.filterField().click();
-			zelleSelectRecipient.filterField().sendKeys();
+			zelleSelectRecipient.filterField().sendKeys(this.unEnrolledNumber);
 			Reporter.log("unEnrolledNumber entered in the  Filter");
 			Thread.sleep(4000);
 			List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();
@@ -156,35 +156,35 @@ package com.omnimobile.Testcases;
 			Assert.assertTrue((recipients.size() > 1), "recipients details Not Displayed As Per the Filter");
 			Reporter.log("Recipients Details "+recipients.size() +" Displayed As per the unEnrolled number in the Applied Filtered");
 
-	 */
-		
+	
+		}
 	
 		
 	
 		
-	//            Search by UnSelect recipient
-		
-		
-		 @Test (groups= {"RegressionTest","smokeTest"},priority=10)
-		 public void verifyUnSelectRecipient() throws InterruptedException
-		 {
-				zelleSelectRecipient.filterField().clear();
-				zelleSelectRecipient.filterField().click();
-			 List<MobileElement> recipients= zelleSelectRecipient.recipientsDetailsList();
-	
-			 Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
-			 recipients.get(1).click();
-			 wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.emailToken()));
-			 zelleSelectRecipient.emailTokens().get(0).click();
-              Thread.sleep(6000);
-			 Reporter.log("Recipient selected As Expected");
-		//	 Assert.assertTrue((zelleSelectRecipient.slectIocn().get(0).isEnabled()), "recipients select icon Not Displayed");
-			 Reporter.log("recipients select icon displayed  As Expected");
-	//		 zelleSelectRecipient.slectIocn().get(0).click();
-			 Thread.sleep(3000);
-			// Assert.assertTrue((zelleSplitMoney.slectIocn().get(0).isEnabled()), "recipients select icon Not Displayed");
-			 Reporter.log("recipients un selected As Expected");
-		 }
+//	//            Search by UnSelect recipient
+//		
+//		
+//		 @Test (groups= {"RegressionTest","smokeTest"},priority=10)
+//		 public void verifyUnSelectRecipient() throws InterruptedException
+//		 {
+//				zelleSelectRecipient.filterField().clear();
+//				zelleSelectRecipient.filterField().click();
+//			 List<MobileElement> recipients= zelleSelectRecipient.recipientsDetailsList();
+//	
+//			 Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
+//			 recipients.get(1).click();
+//			 wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.emailToken()));
+//			 zelleSelectRecipient.emailTokens().get(0).click();
+//              Thread.sleep(6000);
+//			 Reporter.log("Recipient selected As Expected");
+//		//	 Assert.assertTrue((zelleSelectRecipient.slectIocn().get(0).isEnabled()), "recipients select icon Not Displayed");
+//			 Reporter.log("recipients select icon displayed  As Expected");
+//	//		 zelleSelectRecipient.slectIocn().get(0).click();
+//			 Thread.sleep(3000);
+//			// Assert.assertTrue((zelleSplitMoney.slectIocn().get(0).isEnabled()), "recipients select icon Not Displayed");
+//			 Reporter.log("recipients un selected As Expected");
+//		 }
 		
 		
 

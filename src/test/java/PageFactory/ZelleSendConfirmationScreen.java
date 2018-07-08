@@ -12,14 +12,14 @@ public class ZelleSendConfirmationScreen extends Basedriver {
 	
 	By confirmationFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"CONFIRMATION\"]");
 	
-	By sentLable=By.xpath("//XCUIElementTypeStaticText[@name=\"Money Sent\"]");
+	By sentLable=By.id("ConfirmationHeaderTitle");
 	
 	
-	By confirmationIcon=By.id("icon-checkmark");
+	By confirmationIcon=By.id("EnterAmountLabel");
 	
 	
 	
-	By doneBtn =By.id("Done");
+	By doneBtn =By.id("DoneButton");
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
 
