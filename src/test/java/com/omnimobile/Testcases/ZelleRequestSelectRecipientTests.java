@@ -176,7 +176,7 @@ public class ZelleRequestSelectRecipientTests extends Apploader {
 		public void verifyRecipientSearchByEmailNumber() throws InterruptedException {
 			zelleSelectRecipient.filterField().clear();
 			zelleSelectRecipient.filterField().click();
-			zelleSplitMoney.filterField().sendKeys("123");
+			zelleSelectRecipient.filterField().sendKeys("123");
 			Reporter.log("Email entered in the  Filter");
 			Thread.sleep(4000);
 			List<MobileElement> recipients = zelleSelectRecipient.recipientsDetailsList();

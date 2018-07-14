@@ -21,13 +21,11 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 	By zelleSplitBtn=By.id("Split");
 	
 
-	By selectFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='SELECT RECIPIENT']");
+	By selectFlowLable=By.id("SELECT RECIPIENT");
 	
 	By splitLable=By.id("SelectRecipientHeader");
 	
-	By recipientAvatar=By.xpath("//XCUIElementTypeStaticText[@name=\"SelectRecipientAvatarView\"]");
-	
-	//By recipientAvatorView=By.xpath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientAvatarView\"])[1]");
+	By recipientAvatar=By.id("SelectRecipientAvatarView");
 	
 	By filterField=By.id("Filter by name, phone, email");
 	
@@ -39,6 +37,8 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 	
 	By tokenDialogue= By.xpath("//XCUIElementTypeSheet");
 	
+	By tokensList=By.xpath("//XCUIElementTypeSheet//XCUIElementTypeOther/XCUIElementTypeButton");
+	
 	By emailToken=By.xpath("//XCUIElementTypeSheet//XCUIElementTypeButton[contains(@name,'@')]");
 
 	By phoneNumbrsToken=By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'-')]");
@@ -46,7 +46,6 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 	By unEnrolledPhoneNumbrs=By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'not enrolled')]");
 	
 	By cancelTokenBtn=By.id("Cancel");
-	//XCUIElementTypeButton[@name="CANCEL"]
     
 	By cancelSplitScreen=By.id("CANCEL");
 	
@@ -55,8 +54,7 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 	By icon_select=By.id("SelectRecipientTokenCheckMark");
 	
 	
-	By doneBtn =By.xpath("//XCUIElementTypeButton[@name=\"Done\"]");
-	By recipientList=By.xpath("//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[18]");
+	By doneBtn =By.id("Done");
 			
 	
 	
@@ -117,6 +115,12 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 		return icon;
 	}
 	
+	public 	MobileElement slectChkIocn()
+	{
+		MobileElement icon=(MobileElement) driver.findElement(this.icon_select);
+		return icon;
+	}
+	
 	public MobileElement filterField()
 	{
 		MobileElement filterFiel=(MobileElement) driver.findElement(filterField);
@@ -133,6 +137,12 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 	{
 		List<MobileElement> recipients=(List<MobileElement>) driver.findElements(this.recipientDetails);
 		return recipients;
+	}
+	
+	public List<MobileElement> tokensDetails()
+	{
+		List<MobileElement> tokens=(List<MobileElement>) driver.findElements(tokensList);
+		return tokens;
 	}
 	
 	public List<MobileElement> emailTokens()

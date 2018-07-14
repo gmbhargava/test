@@ -103,7 +103,7 @@ public class ZelleSendReviewTests extends Apploader {
 	 
 	 
 	 
-  @Test(groups = { "RegressionTest"},priority=6)
+  @Test(groups = { "RegressionTest"},priority=2)
 public void verifyBackButton() {
 
 	

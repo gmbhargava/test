@@ -18,7 +18,7 @@ public class ZelleSelectRecipient extends Basedriver {
 	By viewTransactions=By.id("GreetingLabel");
 			
 	
-	By zelleBtn=By.xpath("//XCUIElementTypeButton[@name='Zelle']");
+	By zelleBtn=By.name("Zelle");
 	
 	By zelleRequestBtn=By.xpath("//XCUIElementTypeButton[@name=\"Request Money\"]");
 	

@@ -48,6 +48,7 @@ import io.appium.java_client.ios.IOSDriver;
 		String Username;
 		String password;
 
+		
 		@BeforeTest
 		public void login() throws IOException {
 			try {
@@ -367,14 +368,14 @@ import io.appium.java_client.ios.IOSDriver;
 			 Thread.sleep(6000);
 			 Assert.assertTrue((zelleSplitMoney.slectIocn().size()>1 ), " Many recipients not selected ");
 			 Reporter.log("Many recipients selected as expected" );
-		
-
 		}
+
+	}
 		
 
 		// OMAV-T1810 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_Scrolling
 
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 20)
+	/*	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 20)
 		public void verifyRecipientsScrolling() throws InterruptedException {
 			
 			zelleSplitMoney.selectRecipientLabel().isDisplayed();
@@ -384,17 +385,27 @@ import io.appium.java_client.ios.IOSDriver;
 			List<MobileElement> recipients = zelleSplitMoney.recipientsDetailsList();
 			Assert.assertTrue((recipients.size() > 1), "recipient Details Not Displayed");
 			Reporter.log("Recipient Details Displayed As Expected");
-//			MobileElement scroll =(MobileElement) driver.findElementsByXPath("((//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[6]");
-//			TouchAction ac3 = new TouchAction(driver);
-//			ac3.longPress(scroll).moveTo(50, 300).perform();
-			//commonUtil.swipeDown(scroll);
+			
+
+	//  	TouchActions action = new TouchActions(driver);
+	//		action.scroll(element, 10, 100);
+	//		action.perform();
+		
+     //	MobileElement scroll =(MobileElement) driver.findElementsByXPath("((//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[6]");
+  	 //	TouchAction ac3 = new TouchAction(driver);
+ 	 //    ac3.longPress(scroll).moveTo(50, 300).perform();
+	 // 	commonUtil.swipeDown(scroll);
 			Thread.sleep(1000);
 			List<MobileElement> recipients1 = zelleSplitMoney.recipientsDetailsList();
 			Assert.assertTrue((recipients1.size() > 1), "recipient Details Not Displayed after scrolling");
 			Reporter.log("Recipient Details Displayed As Expected after scrolling");
 		
 
-		}
+			
+			
+			
+			
+		} 
 
 	
 	
@@ -402,4 +413,4 @@ import io.appium.java_client.ios.IOSDriver;
 	
 	
 	
-}
+}  */

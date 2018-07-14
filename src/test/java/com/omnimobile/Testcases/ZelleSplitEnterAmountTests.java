@@ -57,9 +57,13 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 				
 			}
 			
+			
+			
 		}
 		 
-			
+	 
+	 
+//	 OMAV-T1892 (1.0)-Money_Zelle_UI_SplitBill_EnterAmount_Navigation
 			
 			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 0)
 			public void verifyZelleSplitNavigation() throws InterruptedException {
@@ -71,7 +75,9 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 				wait.until(ExpectedConditions.visibilityOf(zelleSplitMoney.selectRecipientLabel()));
 			}
 	
-	 
+		
+			
+	 //      OMAV-T1890 (1.0)-Money_Zelle_UI_SplitBill_EnterAmount_Header
 	 
 	 @Test(groups = { "RegressionTest"},priority=1,alwaysRun=true)
 		public void enterAmountVerifyHeader() throws InterruptedException {
@@ -92,7 +98,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			Reporter.log("Token selected successfully");
 			zelleSplitMoneyEnterAmount.nextButtn().click();
 			
-	//		zelleSelectRecipient.emailTokens().get(0).click();
+	//	/*	zelleSelectRecipient.emailTokens().get(0).click();
 
 			Reporter.log("Token selected successfully");
 			Reporter.log("Recipient selected As Expected");
@@ -103,7 +109,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 		}
 	 
 	 
-	 //   OMAV-T1644 (1.0)-Money_Zelle_UI_Send_EnterAmount_DefaultHintAmount
+ //   OMAV-T1886 (1.0) - Money_Zelle_UI_SplitBill_EnterAmount_DefaultHintAmount
 	 
 	 @Test(groups = { "RegressionTest" },priority=2)
 		public void verifyDefaultAmountHint() {
@@ -115,7 +121,12 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			Reporter.log(" Amount deault hint Displayed as expected");
 		}
 	 
-	 //      OMAV-T1649 (1.0)-Money_Zelle_UI_Send_EnterAmount_Keyboard
+	 
+	 
+	 
+	 
+	 
+    //   OMAV-T1891 (1.0) -Money_Zelle_UI_SplitBill_EnterAmount_Keyboard
 	 
 	 @Test(groups = { "RegressionTest"},priority=3)
 		public void verifyKeyBoard() {
@@ -128,7 +139,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 		}
 	 
 	 
-	   //  OMAV-T1647 (1.0)-Money_Zelle_UI_Send_EnterAmount_EnterZero
+   //  OMAV-T1889 (1.0) - Money_Zelle_UI_SplitBill_EnterAmount_EnterZero
 	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=4)
 		public void enterAmountAsZero() {
@@ -145,7 +156,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 	 
 	 
 	 
-	    //     OMAV-T1646 (1.0)-Money_Zelle_UI_Send_EnterAmount_EnterMinimumAmount
+	   //  OMAV-T1888 (1.0) - Money_Zelle_UI_SplitBill_EnterAmount_EnterTotalAmount_Minimum_OneRecipient
 	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=5)
 		public void enterAmountAsMinimum() {
@@ -161,6 +172,9 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 	 
 	 
 	 
+	 
+	 //       OMAV-T1908 (1.0)- Money_Zelle_UI_SplitBill_EnterAmount_Review
+	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=6)
 		public void verifyReviwButton() {
 		
@@ -173,6 +187,10 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			Reporter.log(" Rview button Disabled as expected");
 			
 		}
+	 
+	 
+	 
+	 //    OMAV-T1887 (1.0)-Money_Zelle_UI_SplitBill_EnterAmount_EnterTotalAmount_MaximumDigits
 	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=7)
 		public void verifyMaxDigitsAmount() {
@@ -187,6 +205,11 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			Reporter.log(" Rview button enabled for maximum amount as expected");
 			
 		}
+	 
+	 
+	 
+	 
+	 
 	 
 	@Test(groups = { "RegressionTest", "smokeTest" },priority=8)
 	public void enterAmount() {
@@ -204,6 +227,8 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 	
 	
 	
+	//    OMAV-T1894 (1.0)-	Money_Zelle_UI_SplitBill_EnterAmount_RecipientDetail_AvatarInitials
+	
 		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 9)
 		public void verifyRecipientAvatarIntials() {
 			
@@ -216,7 +241,9 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 
 		}
 		
-		//   OMAVT1784(1.		
+		//   	OMAV-T1895 (1.0)-Money_Zelle_UI_SplitBill_EnterAmount_RecipientDetail_AvatarPhoto
+		
+		
 		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
 		public void verifyRecipientAvatarPhoto() {
 			
@@ -225,9 +252,11 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			Reporter.log("Recipient Avators Displayed As Expected");
 
 		}
+		
+		
 
-@Test(groups = { "RegressionTest"},priority=13)
-public void verifyBackButton() {
+     @Test(groups = { "RegressionTest"},priority=11)
+     public void verifyBackButton() {
 
 	wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
 	zelleSplitMoneyEnterAmount.backButton().click();
@@ -238,11 +267,32 @@ public void verifyBackButton() {
 }
 
 	 
-    
+   
 	
 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
 }
+
+     
+
+
+
+
+
+
+
+
 
 
 

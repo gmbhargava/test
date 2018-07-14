@@ -194,7 +194,7 @@ public class commonUtil {
 	}
 	
 	public static void swipeDown(MobileElement scroll) {
-				//MobileElement scroll =(MobileElement) driver.findElementsByXPath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[16]");
+	            //MobileElement scroll =(MobileElement) driver.findElementsByXPath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[16]");
 		TouchAction ac3 = new TouchAction(driver);
 		ac3.longPress(scroll).moveTo(50, 300).perform();
 	}

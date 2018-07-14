@@ -98,7 +98,7 @@ package com.omnimobile.Testcases;
 			
 //	 	  OMAV-T1791 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_SearchByEmail_NoMatch
 		
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 1)
 			public void verifyRecipientSearchByEmailNoMatch() throws InterruptedException {
 				zelleSplitMoney.filterField().clear();
 				zelleSplitMoney.filterField().click();
@@ -114,7 +114,7 @@ package com.omnimobile.Testcases;
 			
 //		 	  OMAV-T1791 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_SearchByName_NoMatch
 			
-			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+			@Test(groups = { "RegressionTest", "smokeTest" }, priority = 2)
 			public void verifyRecipientSearchByNameNoMatch() throws InterruptedException {
 				zelleSplitMoney.filterField().clear();
 				zelleSplitMoney.filterField().click();
@@ -131,7 +131,7 @@ package com.omnimobile.Testcases;
 		
 	// 	  OMAV-T1791 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_SearchByPhone_NoMatch
 		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 10)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 3)
 		public void verifyRecipientSearchByPhoneNoMatch() throws InterruptedException {
 			zelleSplitMoney.filterField().clear();
 			zelleSplitMoney.filterField().click();
@@ -145,7 +145,7 @@ package com.omnimobile.Testcases;
 
 		}
 		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 4)
 		public void verifyRecipientSearchByUnEnrolledNumber() throws InterruptedException {
 			zelleSplitMoney.filterField().clear();
 			zelleSplitMoney.filterField().click();
@@ -162,7 +162,7 @@ package com.omnimobile.Testcases;
 		
 		//  OMAV-T1792 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_SearchByEmail_Numbers
 		
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 11)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 5)	
 		public void verifyRecipientSearchByEmailNumber() throws InterruptedException {
 			zelleSplitMoney.filterField().clear();
 			zelleSplitMoney.filterField().click();
@@ -180,7 +180,7 @@ package com.omnimobile.Testcases;
 		//   CasesOMAV-T1818 (1.0)- Money_Zelle_UI_SplitBill_SelectRecipients_UnselectRecipient
        
 		
-		 @Test (groups= {"RegressionTest","smokeTest"},priority=10)
+		 @Test (groups= {"RegressionTest","smokeTest"},priority = 6)
 		 public void verifyUnSelectRecipient() throws InterruptedException
 		 {
 				zelleSplitMoney.filterField().clear();
