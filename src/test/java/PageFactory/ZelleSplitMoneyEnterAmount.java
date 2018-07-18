@@ -18,25 +18,39 @@ import io.appium.java_client.ios.IOSDriver;
 
 public class ZelleSplitMoneyEnterAmount extends Basedriver {
 
-	By nextBtn =By.id("Next");
-	By enterAmountFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"ENTER AMOUNT\"]");
+	By nextBtn               =       By.id("Next");
 	
-	By sendLable=By.id("EnterAmountTitle");
+	By enterAmountFlowLable  =       By.id("ENTER AMOUNT");
+	
+	By enteAmntLable         =       By.id("EnterAmountTitle");
 		
-	By amountField=By.id("EnterAmountTextField");
-	By multiUserAvatarsImg=By.id("Avatar_Multi User");
-	By receipientsAvatrs=By.xpath("//XCUIElementTypeStaticText[@name=\"RecipientName\"]/following-sibling::XCUIElementTypeStaticText[1]");
+	By amountField           =       By.id("EnterAmountTextField");
 	
-	By spiltAmountFields=By.name("AmountTextFieldToBeEntered");
+	By multiUserAvatarsImg   =       By.id("MainAvtatView");
 	
-	By amountKeyBoard=By.className("XCUIElementTypeKeyboard");
+	By multiUserTxt          =       By.id("RecipientName");
+	
+	By receipientsAvatrs     =       By.name("IndividualAvatarView");
+	
+	By spiltAmountFields     =       By.name("AmountTextFieldToBeEntered");
+	
+	By amountKeyBoard        =       By.className("XCUIElementTypeKeyboard");
+		
+	By doneBtn               =       By.name("Done");
+	
+	By backBtn               =       By.id("backArrow 1");
+	
+	By reviewBtn             =       By.id("ReviewAmountButton");
+	
+	By cancelBtn             =       By.id("CancelButton");
+	
+	By noChargeTxt           =       By.id("TokenTitle");
+	
+	By recipientName       	 =       By.name("RecipientNameIndividual");
 	
 	
 	
-	By doneBtn =By.xpath("//XCUIElementTypeButton[@name=\"Done\"]");
-	By backBtn=By.id("backArrow 1");
 	
-	By reviewBtn= By.id("Review");
 
 		private By viewTransctionbtn;
 	
@@ -56,7 +70,7 @@ public class ZelleSplitMoneyEnterAmount extends Basedriver {
 	
 	public MobileElement splitMoneyLable()
 	{
-		MobileElement requestLabl=(MobileElement) driver.findElement(sendLable);
+		MobileElement requestLabl=(MobileElement) driver.findElement(this.enteAmntLable);
 		return requestLabl;
 	}
 	
@@ -66,12 +80,25 @@ public class ZelleSplitMoneyEnterAmount extends Basedriver {
 		return filterFiel;
 	}
 	
+	public MobileElement multiUserAvatar()
+	{
+		MobileElement img=(MobileElement) driver.findElement(this.multiUserAvatarsImg);
+		return img;
+	}
+	
 	
 	
 	public 	List<MobileElement> splitAmountFileds()
 	{
 		List<MobileElement> icon=(List<MobileElement>) driver.findElements(this.spiltAmountFields);
 		return icon;
+	}
+	
+	
+	public 	List<MobileElement> recipientsNames()
+	{
+		List<MobileElement> names=(List<MobileElement>) driver.findElements(this.recipientName);
+		return names;
 	}
 	
 	
@@ -100,6 +127,11 @@ public class ZelleSplitMoneyEnterAmount extends Basedriver {
 		return nextButton;
 	}
 	
+	public MobileElement multipleUserTxt()
+	{
+		MobileElement txt =(MobileElement)driver.findElement(this.multiUserTxt);
+		return txt;
+	}
 	
 	public MobileElement reviewButtn()
 	{
@@ -107,7 +139,11 @@ public class ZelleSplitMoneyEnterAmount extends Basedriver {
 		return revwButton;
 	}
 
-
+	public MobileElement noChargesTxt()
+	{
+		MobileElement revwButton =(MobileElement)driver.findElement(this.noChargeTxt);
+		return revwButton;
+	}
 
 
 
