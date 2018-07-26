@@ -277,7 +277,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 		public void verifyEnterAmountEnterTotalAmount_EvenDivison() {
 			boolean userAmountFlag=false;
 			boolean recipientAmountFlag=false;
-			double expTotalAmnt=33.09;
+			double expTotalAmnt=36.06;
 			String recipientAmountVal;
 			String userAmountVal;
 			String totalAmount;
@@ -295,6 +295,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			if (numOfAmountFileds>0) {
 				
 					userAmountVal=zelleSplitMoneyEnterAmount.splitAmountFileds().get(0).getAttribute("value").trim().toString();
+					
 					totalAmount=zelleSplitMoneyEnterAmount.enterAmntField().getAttribute("value").trim().toString();
 					System.out.println(" Recipient amount minimum allowed value is "+userAmountVal);
 					System.out.println(" Total amount minimum allowed value is "+totalAmount);

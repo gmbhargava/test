@@ -16,9 +16,9 @@ import io.appium.java_client.ios.IOSDriver;
 public class ZelleRequestConfirmationScreen extends Basedriver {
 
 	
-	By confirmationFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='REQUEST SENT']");
+	By confirmationFlowLable=By.xpath("//XCUIElementTypeOther[@name=\"CONFIRMATION\"]");
 	
-	By requestLable=By.xpath("//XCUIElementTypeStaticText[@name='Money Requested']");
+	By requestLable=By.id("ConfirmationHeaderTitle");
 	
 	
 	By confirmationIcon=By.id("icon-checkmark");
@@ -28,6 +28,20 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	By doneBtn =By.id("DoneButton");
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
+	
+	By recipentAvatar=By.id("MainAvtatView");
+	
+	By recipentName=By.id("RecipientName");
+	
+	By recipentToken=By.id("RecipientToken");
+	
+	By amountLabl=By.id("EnterAmountLabel");
+	
+	By confirmationDetails=By.id("RecipientAccountInfoLabel");
+	
+	By expiryMsg =By.id("ExpiryMessage");
+	
+	
 
 
 	public ZelleRequestConfirmationScreen(IOSDriver driver)
@@ -56,6 +70,14 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	}
 	
 	
+	public MobileElement expiryMessage()
+	{
+		MobileElement eMsg=(MobileElement)driver.findElement(this.expiryMsg);
+		
+		
+		return eMsg;
+	}
+	
 	
 	public MobileElement doneButtn()
 	{
@@ -66,8 +88,45 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	}
 	
 	
+	public MobileElement recipientName()
+	{
+		MobileElement nextButton =(MobileElement)driver.findElement(this.recipentName);
+		
+		
+		return nextButton;
+	}
+	
+	public MobileElement recipientAvatar()
+	{
+		MobileElement nextButton =(MobileElement)driver.findElement(this.recipentAvatar);
+		
+		
+		return nextButton;
+	}
+	
+	public MobileElement recipientToken()
+	{
+		MobileElement nextButton =(MobileElement)driver.findElement(this.recipentToken);
+		
+		
+		return nextButton;
+	}
+	
+	public List<MobileElement> confirmationDetails()
+	{
+		List<MobileElement> nextButton =(List<MobileElement>)driver.findElements(this.confirmationDetails);
+		
+		
+		return nextButton;
+	}
     
- 
+	public MobileElement confirmationAmount()
+	{
+		MobileElement amnt=(MobileElement)driver.findElement(this.amountLabl);
+		
+		
+		return amnt;
+	}
 	
 }
 	

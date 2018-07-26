@@ -8,20 +8,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.SecureRandom;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Properties;
+import java.util.Random;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import PageFactory.Login;
+
 import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
-import io.appium.java_client.AppiumDriver;
+
+import PageFactory.Login;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
@@ -45,6 +48,7 @@ public class commonUtil {
 	public static ExtentReports extent;
 	public static Login loginUtility;
 	public static String NO_RESET;
+	
 
 	public static String UDID;
 
@@ -94,6 +98,26 @@ public class commonUtil {
 		int end = (int) (width * to);
 		new TouchAction(driver).press(start, y).waitAction(Duration.ofMillis(500)).moveTo(end, y).release().perform();
 	}
+	
+	public static void swipeDown() {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		HashMap<String, String> swipeObject = new HashMap<String, String>();
+		 swipeObject.put("direction", "down"); //up for swipe
+	     swipeObject.put("startX", "90");
+	     swipeObject.put("startY", "400");
+	     swipeObject.put("endX", "90"); //"90");
+	     swipeObject.put("endY", "350"); //"200");
+	     swipeObject.put("duration", "2000");
+	 //    js.executeScript("mobile: swipe", swipeObject); 
+	     js.executeScript("mobile: scroll", swipeObject);
+
+
+	}
+	
+	
+	
+	
 
 	public static void loadConfig(String fileName) throws IOException {
 		FileInputStream fis = new FileInputStream(
@@ -192,6 +216,20 @@ public class commonUtil {
 		return suiteKey;
 
 	}
+	
+	 public static String getRandomAlphaNumeric(int len) {
+		 char[] ch = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
+
+		    char[] c = new char[len];
+		    SecureRandom random = new SecureRandom();
+		    for (int i = 0; i < len; i++) {
+		      c[i] = ch[random.nextInt(ch.length)];
+		    }
+
+		    return new String(c);
+
+		  }
+
 	
 	public static void swipeDown(MobileElement scroll) {
 	            //MobileElement scroll =(MobileElement) driver.findElementsByXPath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[16]");

@@ -15,46 +15,46 @@ import io.appium.java_client.ios.IOSDriver;
 
 public class ZelleSplitMoneyRecipient extends Basedriver {
 
-	By viewTransactions=By.id("GreetingLabel");
+	By viewTransactions     =   By.id("GreetingLabel");
 			
 	
-	By zelleSplitBtn=By.id("Split");
+	By zelleSplitBtn        =   By.id("Split");
 	
 
-	By selectFlowLable=By.id("SELECT RECIPIENT");
+	By selectFlowLable      =   By.id("SELECT RECIPIENT");
 	
-	By splitLable=By.id("SelectRecipientHeader");
+	By splitLable           =   By.id("SelectRecipientHeader");
 	
-	By recipientAvatar=By.id("SelectRecipientAvatarView");
+	By recipientAvatar      =   By.id("SelectRecipientAvatarView");
 	
-	By filterField=By.id("Filter by name, phone, email");
+	By filterField          =   By.id("Filter by name, phone, email");
 	
-	By recipientsTable=By.xpath("//XCUIElementTypeTable");
+	By recipientsTable      =   By.xpath("//XCUIElementTypeTable");
 	
-	By recipientDetails=By.xpath("//XCUIElementTypeTable//XCUIElementTypeCell");
+	By recipientDetails     =   By.xpath("//XCUIElementTypeTable//XCUIElementTypeCell");
 	
-	By nextBtn =By.id("Next");
+	By nextBtn              =   By.id("Next");
 	
-	By tokenDialogue= By.xpath("//XCUIElementTypeSheet");
+	By tokenDialogue        =   By.xpath("//XCUIElementTypeSheet");
 	
-	By tokensList=By.xpath("//XCUIElementTypeSheet//XCUIElementTypeOther/XCUIElementTypeButton");
+	By tokensList           =   By.xpath("//XCUIElementTypeSheet//XCUIElementTypeOther/XCUIElementTypeButton");
 	
-	By emailToken=By.xpath("//XCUIElementTypeSheet//XCUIElementTypeButton[contains(@name,'@')]");
+	By emailToken           =   By.xpath("//XCUIElementTypeSheet//XCUIElementTypeButton[contains(@name,'@')]");
 
-	By phoneNumbrsToken=By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'-')]");
+	By phoneNumbrsToken     =   By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'-')]");
 	
-	By unEnrolledPhoneNumbrs=By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'not enrolled')]");
+	By unEnrolledPhoneNumbrs=   By.xpath("//XCUIElementTypeOther/XCUIElementTypeButton[contains(@name,'not enrolled')]");
 	
-	By cancelTokenBtn=By.id("Cancel");
+	By cancelTokenBtn       =   By.id("Cancel");
     
-	By cancelSplitScreen=By.id("CANCEL");
+	By cancelSplitScreen    =   By.id("CANCEL");
 	
-	By backBtn =By.id("backArrow 1");
+	By backBtn              =   By.id("backArrow 1");
 	
-	By icon_select=By.id("SelectRecipientTokenCheckMark");
+	By icon_select          =   By.id("SelectRecipientTokenCheckMark");
 	
 	
-	By doneBtn =By.id("Done");
+	By doneBtn              =   By.id("Done");
 			
 	
 	
@@ -252,14 +252,10 @@ public class ZelleSplitMoneyRecipient extends Basedriver {
 		MobileElement recipientsBtn=(MobileElement) driver.findElementsByXPath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[16]");
 		return recipientsBtn;
 	}
-    
-    
-	
- 
-	
-}
-
-
 
 	
+	
+
+
+}	
 

@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 import com.omnimobile.commonUtilities.Apploader;
 import com.omnimobile.commonUtilities.commonUtil;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.MobileElement;
 
@@ -63,12 +64,13 @@ import io.appium.java_client.MobileElement;
 			
 		}
 		
-//			
-//		//      OMAV-T1825 (1.0)-Money_Zelle_UI_SplitBill_SelectToken_Cancel
-//		
+		
+		//      OMAV-T1825 (1.0)-Money_Zelle_UI_SplitBill_SelectToken_Cancel
+		
 			@Test  (groups= {"RegressionTest","smokeTest"},priority=0)  
 			public void verifyCancelToken() 
 			{
+				boolean isTokenSelected=false;
 				List<MobileElement> recipients=	zelleSplitMoney.recipientsDetailsList();
 						
 				Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
@@ -81,16 +83,18 @@ import io.appium.java_client.MobileElement;
 				String recipientScreen=zelleSplitMoney.selectRecipientLabel().getAttribute("name");
 				Assert.assertTrue(recipientScreen.equalsIgnoreCase("SELECT RECIPIENT"), "Unable to see select recipient screen");
 				Reporter.log("User navigated back to slect recipients screen after clicking on Cancel button");
+				
 				try {
-					boolean isTokenSelected=zelleSplitMoney.slectChkIocn().isDisplayed();
-					Assert.assertFalse((isTokenSelected), "recipients selected");
+					isTokenSelected=zelleSplitMoney.slectChkIocn().isDisplayed();
+					
 					
 				}catch(Exception e) {
 					Reporter.log("recipients not selected as expected and test passed");
 				
 				
 				}
-			
+				Assert.assertFalse((isTokenSelected), "recipients selected");
+				Reporter.log("recipients not selected as expected and test passed");
 				
 				
 			
@@ -106,6 +110,7 @@ import io.appium.java_client.MobileElement;
 				@Test  (groups= {"RegressionTest","smokeTest"},priority=1)  
 				public void verifySelectTokenInvalidToken() 
 				{
+					boolean isTokenSelected=false;
 					List<MobileElement> recipients=	zelleSplitMoney.recipientsDetailsList();
 							
 					Assert.assertTrue((recipients.size()>1), "recipients Lists Not Displayed");
@@ -123,14 +128,16 @@ import io.appium.java_client.MobileElement;
 					Reporter.log("Clicked on Cancel Button");
 					wait.until(ExpectedConditions.visibilityOf(zelleSplitMoney.selectRecipientLabel()));
 					try {
-						boolean isTokenSelected=zelleSplitMoney.slectChkIocn().isDisplayed();
-						Assert.assertFalse((isTokenSelected), "recipients selected");
+						isTokenSelected=zelleSplitMoney.slectChkIocn().isDisplayed();
+						
 						
 					}catch(Exception e) {
 						Reporter.log("recipients not selected as expected and test passed");
 					
 					
 					}
+					Assert.assertFalse((isTokenSelected), "recipients selected");
+					Reporter.log("recipients not selected as expected and test passed");
 				}
 				
 				
@@ -207,12 +214,14 @@ import io.appium.java_client.MobileElement;
 					Reporter.log("recipient phone number token selected as expected");
 					
 					
-								
-					
-				}	
-//				
+			
+        	}	
+
 				
-				 //       OMAV-T1830 (1.0)-Money_Zelle_UI_SplitBill_SelectToken_TokensOrder
+				
+			
+				
+	 //      OMAV-T1830 (1.0)-Money_Zelle_UI_SplitBill_SelectToken_TokensOrder
 				
 				@Test  (groups= {"RegressionTest","smokeTest"},priority=4)  
 				public void verifyTokensOrderDetails() 
@@ -230,13 +239,13 @@ import io.appium.java_client.MobileElement;
 				    List<MobileElement> tokens=zelleSplitMoney.tokensDetails();
 				    int numOfTokens=tokens.size();
 				    System.out.println("Num of tokes dispalyed "+numOfTokens);
-				    
+				    			    
 				    int numofEmails=zelleSplitMoney.emailTokens().size();
 				    int numOfPhoneNums=zelleSplitMoney.phoneNumberTokens().size();
 				
 				    for(int i=0;i<numofEmails;i++) {
 				    	tokenTxt=tokens.get(i).getAttribute("name");
-				    	System.out.println(" Token  displayed "+tokenTxt);
+				    	
 				    	if(tokenTxt.contains("@")) {
 				    		emailOrder=true;
 				    		
@@ -268,8 +277,20 @@ import io.appium.java_client.MobileElement;
 					zelleSplitMoney.cancelTokensButton().click();
 					Reporter.log("Clicked on Cancel Button");
 				  }
-				    
+
+
+				
 					
+					
+					
+				
+				
+				
+			  }
+				    
+			
+	
+				
 					
 					
 					
@@ -281,7 +302,7 @@ import io.appium.java_client.MobileElement;
 				
 				
 				
-	}		
+			
 				
 				
 				

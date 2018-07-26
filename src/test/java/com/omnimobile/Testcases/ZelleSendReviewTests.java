@@ -78,7 +78,7 @@ public class ZelleSendReviewTests extends Apploader {
 			Reporter.log("Token selected successfully");
 			Reporter.log("Recipient selected As Expected");
 			wait.until(ExpectedConditions.visibilityOf(sendEnterAmountScreen.selectAmountLabel()));
-			Assert.assertTrue(this.sendEnterAmountScreen.sendMoneyLable().isDisplayed()," Enter amount header not displayed");
+			Assert.assertTrue(sendEnterAmountScreen.sendMoneyLable().isDisplayed()," Enter amount header not displayed");
 		
 			Reporter.log(" Amount header displayed as expected");
 			

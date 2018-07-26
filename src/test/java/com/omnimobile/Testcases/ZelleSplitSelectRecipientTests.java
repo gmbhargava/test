@@ -1,6 +1,12 @@
 
 package com.omnimobile.Testcases;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 //public class ZelleSplitSelectRecipient {
 
 	
@@ -8,32 +14,15 @@ package com.omnimobile.Testcases;
 	
 	
 	import org.testng.Assert;
-	import org.testng.Reporter;
-	import org.testng.annotations.BeforeClass;
-	import org.testng.annotations.BeforeTest;
-	import org.testng.annotations.Listeners;
-	import org.testng.annotations.Test;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-	import java.io.IOException;
-	import java.net.MalformedURLException;
-	import java.net.URL;
-	import java.util.List;
+import com.omnimobile.commonUtilities.Apploader;
+import com.omnimobile.commonUtilities.commonUtil;
 
-	import org.openqa.selenium.By;
-	import org.openqa.selenium.Keys;
-	import org.openqa.selenium.remote.DesiredCapabilities;
-	import org.openqa.selenium.support.ui.ExpectedConditions;
-
-	import com.omnimobile.commonUtilities.Apploader;
-	import com.omnimobile.commonUtilities.commonUtil;
-
-	import PageFactory.Login;
-	import io.appium.java_client.MobileElement;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.ios.IOSDriver;
-	import io.appium.java_client.ios.IOSElement;
-	import io.appium.java_client.remote.AutomationName;
-	import io.appium.java_client.remote.MobileCapabilityType;
 
 	//@Listeners({com.omnimobile.listeners.listener.class});
 	public class ZelleSplitSelectRecipientTests extends Apploader {
@@ -104,7 +93,7 @@ import io.appium.java_client.ios.IOSDriver;
 		}
 		
 		//  OMAVT1783(1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_AvatarInitials
-		
+//		
 		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 1)
 		public void verifyRecipientAvatarIntials() {
 			wait.until(ExpectedConditions.visibilityOf(zelleSplitMoney.selectRecipientLabel()));
@@ -347,7 +336,7 @@ import io.appium.java_client.ios.IOSDriver;
 
 		// OMAV-T1810 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_ManyRecipients
 
-		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 19)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 20)
 		public void verifyManyRecipients() throws InterruptedException {
 			zelleSplitMoney.filterField().clear();
 			zelleSplitMoney.filterField().click();
@@ -368,14 +357,16 @@ import io.appium.java_client.ios.IOSDriver;
 			 Thread.sleep(6000);
 			 Assert.assertTrue((zelleSplitMoney.slectIocn().size()>1 ), " Many recipients not selected ");
 			 Reporter.log("Many recipients selected as expected" );
+			 recipients.get(1).click();
+			 recipients.get(2).click();
 		}
 
-	}
+		
 		
 
 		// OMAV-T1810 (1.0)-Money_Zelle_UI_SplitBill_SelectRecipients_Scrolling
 
-	/*	@Test(groups = { "RegressionTest", "smokeTest" }, priority = 20)
+		@Test(groups = { "RegressionTest", "smokeTest" }, priority = 21)
 		public void verifyRecipientsScrolling() throws InterruptedException {
 			
 			zelleSplitMoney.selectRecipientLabel().isDisplayed();
@@ -384,17 +375,10 @@ import io.appium.java_client.ios.IOSDriver;
 			zelleSplitMoney.doneButton().click();
 			List<MobileElement> recipients = zelleSplitMoney.recipientsDetailsList();
 			Assert.assertTrue((recipients.size() > 1), "recipient Details Not Displayed");
-			Reporter.log("Recipient Details Displayed As Expected");
-			
-
-	//  	TouchActions action = new TouchActions(driver);
-	//		action.scroll(element, 10, 100);
-	//		action.perform();
-		
-     //	MobileElement scroll =(MobileElement) driver.findElementsByXPath("((//XCUIElementTypeStaticText[@name=\"SelectRecipientName\"])[6]");
-  	 //	TouchAction ac3 = new TouchAction(driver);
- 	 //    ac3.longPress(scroll).moveTo(50, 300).perform();
-	 // 	commonUtil.swipeDown(scroll);
+			Reporter.log("Recipient Details Displayed As Expected");	
+			System.out.println("Before Swipe");
+			commonUtil.swipeDown();
+			System.out.println("After Swipe");
 			Thread.sleep(1000);
 			List<MobileElement> recipients1 = zelleSplitMoney.recipientsDetailsList();
 			Assert.assertTrue((recipients1.size() > 1), "recipient Details Not Displayed after scrolling");
@@ -413,4 +397,4 @@ import io.appium.java_client.ios.IOSDriver;
 	
 	
 	
-}  */
+}  
