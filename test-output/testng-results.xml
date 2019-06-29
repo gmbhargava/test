@@ -2,19 +2,7 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[Recipient Emails Details Displayed As Expected]]>
-    </line>
-    <line>
-      <![CDATA[Token selected successfully]]>
-    </line>
-    <line>
-      <![CDATA[Recipient selected As Expected]]>
-    </line>
-    <line>
-      <![CDATA[ Amount header displayed as expected]]>
-    </line>
-    <line>
-      <![CDATA[ Amount Entered succesfully]]>
+      <![CDATA[Review send screen Displayed As Expected]]>
     </line>
     <line>
       <![CDATA[ Rview button enabled for maximum amount as expected]]>
@@ -32,42 +20,30 @@
       <![CDATA[Confirmation screen displayed as expected]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="65146" started-at="2018-07-08T14:30:21Z" finished-at="2018-07-08T14:31:26Z">
+  <suite name="Default suite" duration-ms="51691" started-at="2018-08-13T23:18:34Z" finished-at="2018-08-13T23:19:26Z">
     <groups>
       <group name="RegressionTest">
-        <method signature="ZelleSendConfirmationTests.verifyReviewScreen()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="verifyReviewScreen" class="com.omnimobile.Testcases.ZelleSendConfirmationTests"/>
-        <method signature="ZelleSendConfirmationTests.verifySendMoneyConfirm()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="verifySendMoneyConfirm" class="com.omnimobile.Testcases.ZelleSendConfirmationTests"/>
+        <method signature="ZelleRespondToRequestConfirmationTests.verifyReviewScreen()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="verifyReviewScreen" class="com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests"/>
+        <method signature="ZelleRespondToRequestConfirmationTests.verifySendMoneyConfirm()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="verifySendMoneyConfirm" class="com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests"/>
       </group> <!-- RegressionTest -->
       <group name="smokeTest">
-        <method signature="ZelleSendConfirmationTests.verifySendMoneyConfirm()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="verifySendMoneyConfirm" class="com.omnimobile.Testcases.ZelleSendConfirmationTests"/>
+        <method signature="ZelleRespondToRequestConfirmationTests.verifySendMoneyConfirm()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="verifySendMoneyConfirm" class="com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests"/>
       </group> <!-- smokeTest -->
     </groups>
-    <test name="Default test" duration-ms="65146" started-at="2018-07-08T14:30:21Z" finished-at="2018-07-08T14:31:26Z">
-      <class name="com.omnimobile.Testcases.ZelleSendConfirmationTests">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="setup" is-config="true" duration-ms="7411" started-at="2018-07-08T07:30:14Z" finished-at="2018-07-08T07:30:21Z">
+    <test name="Default test" duration-ms="51691" started-at="2018-08-13T23:18:34Z" finished-at="2018-08-13T23:19:26Z">
+      <class name="com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="setup" is-config="true" duration-ms="5587" started-at="2018-08-13T16:18:28Z" finished-at="2018-08-13T16:18:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="login" is-config="true" duration-ms="20538" started-at="2018-07-08T07:30:21Z" finished-at="2018-07-08T07:30:42Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="login" is-config="true" duration-ms="24856" started-at="2018-08-13T16:18:34Z" finished-at="2018-08-13T16:18:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="verifyReviewScreen()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="verifyReviewScreen" duration-ms="35282" started-at="2018-07-08T07:30:42Z" finished-at="2018-07-08T07:31:17Z">
+        <test-method status="PASS" signature="verifyReviewScreen()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="verifyReviewScreen" duration-ms="13374" started-at="2018-08-13T16:18:59Z" finished-at="2018-08-13T16:19:12Z">
           <reporter-output>
             <line>
-              <![CDATA[Recipient Emails Details Displayed As Expected]]>
-            </line>
-            <line>
-              <![CDATA[Token selected successfully]]>
-            </line>
-            <line>
-              <![CDATA[Recipient selected As Expected]]>
-            </line>
-            <line>
-              <![CDATA[ Amount header displayed as expected]]>
-            </line>
-            <line>
-              <![CDATA[ Amount Entered succesfully]]>
+              <![CDATA[Review send screen Displayed As Expected]]>
             </line>
             <line>
               <![CDATA[ Rview button enabled for maximum amount as expected]]>
@@ -77,7 +53,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- verifyReviewScreen -->
-        <test-method status="PASS" signature="verifySendMoneyConfirm()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="verifySendMoneyConfirm" duration-ms="9318" started-at="2018-07-08T07:31:17Z" finished-at="2018-07-08T07:31:26Z">
+        <test-method status="PASS" signature="verifySendMoneyConfirm()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="verifySendMoneyConfirm" duration-ms="13449" started-at="2018-08-13T16:19:12Z" finished-at="2018-08-13T16:19:26Z">
           <reporter-output>
             <line>
               <![CDATA[Confirmation screen displayed as expected]]>
@@ -90,11 +66,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- verifySendMoneyConfirm -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.omnimobile.Testcases.ZelleSendConfirmationTests@145eaa29]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-07-08T07:31:27Z" finished-at="2018-07-08T07:31:27Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests@8b96fde]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-08-13T16:19:26Z" finished-at="2018-08-13T16:19:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.omnimobile.Testcases.ZelleSendConfirmationTests -->
+      </class> <!-- com.omnimobile.Testcases.ZelleRespondToRequestConfirmationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -12,9 +12,10 @@ public class Login extends Basedriver
 {
 	
 	
-	By usrName=By.xpath("//XCUIElementTypeCell[2]");
+	By usrName=By.id("usernameTextField");
+			//By.xpath("//XCUIElementTypeCell[2]");
 	
-	By password=By.xpath("//XCUIElementTypeCell[3]");
+	By password=By.id("passwordTextField");//By.xpath("//XCUIElementTypeCell[3]");
 	
 	By lgnBtn=By.id("loginButton");
 	

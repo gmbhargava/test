@@ -31,6 +31,14 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleSplitEnterAmountTests extends Apploader {
+	
+	/**
+	 * @author Nagarjuna Reddy
+	 * @story
+	 *  ZelleSplitEnterAmountTests.
+	 */
+	
+	
 
 	 public static String Username;
 	 public static String password;
@@ -49,8 +57,8 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 				loginPage.userNameTextBox().sendKeys(Username);
 				loginPage.passwordTextbox().sendKeys(password);
 				driver.hideKeyboard();
-				loginPage.loginButton().click();
-			
+				//loginPage.loginButton().click();
+				Thread.sleep(9000);
 				Thread.sleep(9000);
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 
@@ -105,12 +113,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			
 			
 			
-			
-			
-			
-			
-			
-			
+		
 	 }
 	 
 	 
@@ -401,16 +404,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 			Reporter.log(" Done button in Amount keyboard Displayed as expected");
 		}
 		
-		//OMAV-T1892 (1.0) Money_Zelle_UI_SplitBill_EnterAmount_Navigation
-	     @Test(groups = { "RegressionTest"},priority=15)
-	    public void verifyEnterAmount_Navigation() {
-			wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
-			zelleSplitMoneyEnterAmount.backButton().click();
-			wait.until(ExpectedConditions.visibilityOf(zelleSplitMoney.selectRecipientLabel()));
-			Assert.assertTrue(zelleSplitMoney.selectRecipientLabel().isDisplayed()," Select recipients screen not displayed");
 		
-			Reporter.log(" Select recipients screen displayed");
-	     }
 	     
 	     
 	     
@@ -480,7 +474,7 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 		 			
 		 				wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
 		 						
-		 				Assert.assertTrue(zelleSplitMoneyEnterAmount.multiUserAvatar().isDisplayed() ,"  multi-person avatar not disabled");
+		 				Assert.assertTrue((zelleSplitMoneyEnterAmount.multiUserAvatar().isEnabled()),"  multi-person avatar not displayed");
 		 				Reporter.log("  multi-person avatar displayed as expected");
 		 				String multiusersTxt=zelleSplitMoneyEnterAmount.multipleUserTxt().getAttribute("value");
 		 				System.out.println("Multi user text displayed as "+multiusersTxt);
@@ -502,128 +496,19 @@ public class ZelleSplitEnterAmountTests extends Apploader {
 		 				Reporter.log("Review text displayed as expected");
 		 				Assert.assertTrue(zelleSplitMoneyEnterAmount.reviewButtn().getAttribute("enabled").equalsIgnoreCase("false"),"Review button Enabled");
 		 				Reporter.log(" Review Button Disable as we expected");
-		 				 				
-		 				
-		 				
+		 			
 		 			}
 		 		 
-		 		 
+		 		//OMAV-T1892 (1.0) Money_Zelle_UI_SplitBill_EnterAmount_Navigation
+		 		 @Test(groups = { "RegressionTest", "smokeTest" },priority=20)
+			    public void verifyEnterAmount_Navigation() {
+					wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
+					zelleSplitMoneyEnterAmount.backButton().click();
+					wait.until(ExpectedConditions.visibilityOf(zelleSplitMoney.selectRecipientLabel()));
+					Assert.assertTrue(zelleSplitMoney.selectRecipientLabel().isDisplayed()," Select recipients screen not displayed");
+				
+					Reporter.log(" Select recipients screen displayed");
+			     }
 	     
 }    
 	     
-	     
-	     
-	     
-	     
-	 	/*     
-
-//	 
-//	 
-
-//	 
-//	 
-//	 
-//	   //  OMAV-T1888 (1.0) - Money_Zelle_UI_SplitBill_EnterAmount_EnterTotalAmount_Minimum_OneRecipient
-//	 
-//	 @Test(groups = { "RegressionTest", "smokeTest" },priority=5)
-//		public void enterAmountAsMinimum() {
-//		
-//			
-//			wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
-//			zelleSplitMoneyEnterAmount.enterAmntField().sendKeys("0.01");
-//			Reporter.log(" Amount Entered as zero successfully");
-//			zelleSplitMoneyEnterAmount.doneButtn().click();
-//			Assert.assertTrue(this.zelleSplitMoneyEnterAmount.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
-//			Reporter.log(" Review button enabled for minimum amount as expected");
-//		}
-//	 
-//	 
-//	 
-//	 
-//	 //       OMAV-T1908 (1.0)- Money_Zelle_UI_SplitBill_EnterAmount_Review
-//	 
-//	 @Test(groups = { "RegressionTest", "smokeTest" },priority=6)
-//		public void verifyReviwButton() {
-//		
-//			
-//			wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
-//			zelleSplitMoneyEnterAmount.enterAmntField().clear();
-//			zelleSplitMoneyEnterAmount.doneButtn().click();
-//			Reporter.log(" Amount Entered successfully");
-//			Assert.assertFalse(zelleSplitMoneyEnterAmount.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button Enabled");
-//			Reporter.log(" Review button Disabled as expected");
-//			
-//		}
-//	 
-//	 
-//	 
-//	 //    OMAV-T1887 (1.0)-Money_Zelle_UI_SplitBill_EnterAmount_EnterTotalAmount_MaximumDigits
-//	 
-//	 @Test(groups = { "RegressionTest", "smokeTest" },priority=7)
-//		public void verifyMaxDigitsAmount() {
-//		
-//			
-//			wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
-//			zelleSplitMoneyEnterAmount.enterAmntField().clear();
-//			zelleSplitMoneyEnterAmount.enterAmntField().sendKeys("123456700");
-//			zelleSplitMoneyEnterAmount.doneButtn().click();
-//			Reporter.log(" Amount Entered successfully");
-//			Assert.assertTrue(zelleSplitMoneyEnterAmount.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
-//			Reporter.log(" Review button enabled for maximum amount as expected");
-//			
-//		}
-//	 
-//	 
-//	 
-//	 
-//	 
-//	 
-//	@Test(groups = { "RegressionTest", "smokeTest" },priority=8)
-//	public void enterAmount() {
-//	
-//		
-//		wait.until(ExpectedConditions.visibilityOf(zelleSplitMoneyEnterAmount.selectAmountLabel()));
-//		zelleSplitMoneyEnterAmount.enterAmntField().clear();
-//		zelleSplitMoneyEnterAmount.enterAmntField().sendKeys(amount);
-//		zelleSplitMoneyEnterAmount.doneButtn().click();
-//		Reporter.log(" Amount Entered succesfully");
-//		Assert.assertTrue(zelleSplitMoneyEnterAmount.reviewButtn().getAttribute("enabled").equalsIgnoreCase("true"),"Review button disabled");
-//		Reporter.log(" Rview button enabled for maximum amount as expected");
-//		
-//	}
-//	
-//	
-//	
-
-//		
-//		
-
-	 
-   
-	 
-
-}
-
-     
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-

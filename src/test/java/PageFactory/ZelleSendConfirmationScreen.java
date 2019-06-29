@@ -10,12 +10,12 @@ import io.appium.java_client.ios.IOSDriver;
 public class ZelleSendConfirmationScreen extends Basedriver {
 
 	
-	By confirmationFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"CONFIRMATION\"]");
+	By confirmationFlowLable=By.id("CONFIRMATION");
 	
 	By sentLable=By.id("ConfirmationHeaderTitle");
 	
 	
-	By confirmationIcon=By.id("EnterAmountLabel");
+	By confirmationIcon=By.id("tickImage");
 	
 	
 	

@@ -31,6 +31,15 @@ import io.appium.java_client.MobileElement;
 		 String specialCharEmail;
 		 String Username;
 		 String password;
+		 
+		 /**
+			 * @author Nagarjuna Reddy.
+			 * @story OMAV-143
+			 *  Zelle Split SelectToken Screen.
+			 */
+		 
+		 
+		 
 
 		 @BeforeTest
 		public void login() throws IOException 
@@ -47,8 +56,8 @@ import io.appium.java_client.MobileElement;
 				loginPage.userNameTextBox().sendKeys(this.Username);
 				loginPage.passwordTextbox().sendKeys(this.password);
 				driver.hideKeyboard();
-				loginPage.loginButton().click();
-			
+			//	loginPage.loginButton().click();
+				Thread.sleep(9000);
 				Thread.sleep(9000);
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				zelleSelectRecipient.zelleButton().click();

@@ -16,12 +16,12 @@ import io.appium.java_client.ios.IOSDriver;
 public class ZelleRequestConfirmationScreen extends Basedriver {
 
 	
-	By confirmationFlowLable=By.xpath("//XCUIElementTypeOther[@name=\"CONFIRMATION\"]");
+	By confirmationFlowLable=By.id("CONFIRMATION");
 	
 	By requestLable=By.id("ConfirmationHeaderTitle");
 	
 	
-	By confirmationIcon=By.id("icon-checkmark");
+	By confirmationIcon=By.name("tickImage");
 	
 	
 	
@@ -29,7 +29,7 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");
 	
-	By recipentAvatar=By.id("MainAvtatView");
+	By recipentAvatar=By.id("tickImage");//By.id("MainAvtatView");
 	
 	By recipentName=By.id("RecipientName");
 	
@@ -65,8 +65,8 @@ public class ZelleRequestConfirmationScreen extends Basedriver {
 	
 	public MobileElement confirmIcon()
 	{
-		MobileElement filterFiel=(MobileElement) driver.findElement(confirmationIcon);
-		return filterFiel;
+		MobileElement icon=(MobileElement) driver.findElement(confirmationIcon);
+		return icon;
 	}
 	
 	

@@ -1,56 +1,56 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 54.711 s <<< FAILURE! - in TestSuite
-viewTransactionsHistory(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 32.501 s  <<< FAILURE!
-java.lang.NullPointerException
-	at com.omnimobile.Testcases.TransactionHistory.viewTransactionsHistory(TransactionHistory.java:25)
-
-switchBetweenAccounts(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 3.702 s  <<< FAILURE!
-org.openqa.selenium.WebDriverException: 
-Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
-    at XCUITestDriver.callee$0$0$ (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/lib/commands/find.js:130:13)
-    at tryCatch (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:67:40)
-    at GeneratorFunctionPrototype.invoke [as _invoke] (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:315:22)
-    at GeneratorFunctionPrototype.prototype.(anonymous function) [as throw] (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:100:21)
-    at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
-    at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 28.794 s <<< FAILURE! - in TestSuite
+viewTransactionsHistory(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 18.647 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1070:978f:5ad6:b64f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_172'
-Driver info: driver.version: IOSDriver
+System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1cd9:452a:a49b:19c9%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_172'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {app: /Users/c039396/Downloads/Om..., automationName: XCUITest, browserName: , databaseEnabled: false, deviceName: iPhone X, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, noReset: true, platform: MAC, platformName: MAC, platformVersion: 11.3, takesScreenshot: true, udid: EECB8D75-16A4-4559-AD64-0FD..., webStorageEnabled: false}
+Session ID: 0ccb1815-7f8a-4b7e-b7fb-65d7ea31463b
+*** Element info: {Using=xpath, value=//XCUIElementTypeStaticText[contains(@name,'AccountLabel')]}
+	at com.omnimobile.Testcases.TransactionHistory.viewTransactionsHistory(TransactionHistory.java:22)
+
+switchBetweenAccounts(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 1.394 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1cd9:452a:a49b:19c9%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_172'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {app: /Users/c039396/Downloads/Om..., automationName: XCUITest, browserName: , databaseEnabled: false, deviceName: iPhone X, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, noReset: true, platform: MAC, platformName: MAC, platformVersion: 11.3, takesScreenshot: true, udid: EECB8D75-16A4-4559-AD64-0FD..., webStorageEnabled: false}
+Session ID: 0ccb1815-7f8a-4b7e-b7fb-65d7ea31463b
+*** Element info: {Using=id, value=Close}
 	at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:78)
-Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement
-	at com.omnimobile.Testcases.TransactionHistory.switchBetweenAccounts(TransactionHistory.java:78)
 
-transactionListInitialLoad(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 2.272 s  <<< FAILURE!
-org.openqa.selenium.WebDriverException: 
-Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
-    at XCUITestDriver.callee$0$0$ (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/lib/commands/find.js:130:13)
-    at tryCatch (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:67:40)
-    at GeneratorFunctionPrototype.invoke [as _invoke] (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:315:22)
-    at GeneratorFunctionPrototype.prototype.(anonymous function) [as throw] (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:100:21)
-    at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
-    at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
+transactionListInitialLoad(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 1.52 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1070:978f:5ad6:b64f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_172'
-Driver info: driver.version: IOSDriver
-	at com.omnimobile.Testcases.TransactionHistory.transactionListInitialLoad(TransactionHistory.java:109)
-Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement
-	at com.omnimobile.Testcases.TransactionHistory.transactionListInitialLoad(TransactionHistory.java:109)
+System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1cd9:452a:a49b:19c9%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_172'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {app: /Users/c039396/Downloads/Om..., automationName: XCUITest, browserName: , databaseEnabled: false, deviceName: iPhone X, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, noReset: true, platform: MAC, platformName: MAC, platformVersion: 11.3, takesScreenshot: true, udid: EECB8D75-16A4-4559-AD64-0FD..., webStorageEnabled: false}
+Session ID: 0ccb1815-7f8a-4b7e-b7fb-65d7ea31463b
+*** Element info: {Using=id, value=Close}
+	at com.omnimobile.Testcases.TransactionHistory.transactionListInitialLoad(TransactionHistory.java:111)
 
-selectSpecificTransaction(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 8.367 s  <<< FAILURE!
-org.openqa.selenium.WebDriverException: 
-Returned value cannot be converted to WebElement: {stacktrace=NoSuchElementError: An element could not be located on the page using the given search parameters.
-    at XCUITestDriver.callee$0$0$ (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/lib/commands/find.js:130:13)
-    at tryCatch (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:67:40)
-    at GeneratorFunctionPrototype.invoke [as _invoke] (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:315:22)
-    at GeneratorFunctionPrototype.prototype.(anonymous function) [as throw] (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:100:21)
-    at GeneratorFunctionPrototype.invoke (/Applications/Appium.app/Contents/Resources/app/node_modules/appium-xcuitest-driver/node_modules/babel-runtime/regenerator/runtime.js:136:37)
-    at <anonymous>, error=no such element, message=An element could not be located on the page using the given search parameters.}
+selectSpecificTransaction(com.omnimobile.Testcases.TransactionHistory)  Time elapsed: 1.39 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1070:978f:5ad6:b64f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_172'
-Driver info: driver.version: IOSDriver
-	at com.omnimobile.Testcases.TransactionHistory.selectSpecificTransaction(TransactionHistory.java:36)
-Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement
+System info: host: 'WNMCA14R9Y6H03A', ip: 'fe80:0:0:0:1cd9:452a:a49b:19c9%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_172'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {app: /Users/c039396/Downloads/Om..., automationName: XCUITest, browserName: , databaseEnabled: false, deviceName: iPhone X, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, noReset: true, platform: MAC, platformName: MAC, platformVersion: 11.3, takesScreenshot: true, udid: EECB8D75-16A4-4559-AD64-0FD..., webStorageEnabled: false}
+Session ID: 0ccb1815-7f8a-4b7e-b7fb-65d7ea31463b
+*** Element info: {Using=id, value=Close}
 	at com.omnimobile.Testcases.TransactionHistory.selectSpecificTransaction(TransactionHistory.java:36)
 

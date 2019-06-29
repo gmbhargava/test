@@ -19,6 +19,17 @@ import io.appium.java_client.MobileElement;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleRequestEnterAmountTests extends Apploader {
+	
+	/**
+	 * @author Nagarjuna Reddy
+	 * @story
+	 *  ZelleRequestEnterAmountTests.
+	 */
+	
+	
+	
+	
+	
 	 String Username;
 	 String password;
 	 String amount;
@@ -34,7 +45,7 @@ public class ZelleRequestEnterAmountTests extends Apploader {
 			loginPage.userNameTextBox().sendKeys(this.Username);
 			loginPage.passwordTextbox().sendKeys(this.password);
 			driver.hideKeyboard();
-			loginPage.loginButton().click();
+			//loginPage.loginButton().click();
 		
 			Thread.sleep(9000);
 			zelleSelectRecipient.zelleButton().click();
@@ -98,7 +109,7 @@ public class ZelleRequestEnterAmountTests extends Apploader {
 			Reporter.log(" Amount Entered as zero succesfully");
 			enterAmountTests.doneButtn().click();
 			Assert.assertTrue(this.enterAmountTests.reviewButtn().getAttribute("enabled").equalsIgnoreCase("false"),"Review button not disabled");
-			Reporter.log(" Rview button disabled for zero amount as expected");
+			Reporter.log(" Review button disabled for zero amount as expected");
 		}
 
 	 

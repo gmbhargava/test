@@ -18,27 +18,28 @@ public class ZelleSendSelectRecipient extends Basedriver {
 	By viewTransactions=By.id("GreetingLabel");
 			
 	
-	By zelleSenBtn=By.xpath("//XCUIElementTypeButton[@name='Send Money']");
+	By zelleSenBtn=By.id("Send Money");
 	
 	
 	
-	By selectFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name='SELECT RECIPIENT']");
+	By selectFlowLable=By.id("SELECT RECIPIENT");
 	
 	By sendLable=By.id("SelectRecipientHeader");
 	
-	By recipientAvatar=By.xpath("//XCUIElementTypeCell/XCUIElementTypeStaticText[1]");
+	By recipientAvatar=By.name("SelectRecipientAvatarView");
 	
 	//By recipientAvatorView=By.xpath("(//XCUIElementTypeStaticText[@name=\"SelectRecipientAvatarView\"])[1]");
 	
-	By filterField=By.id("Filter by name, phone, email");
-	By doneBtn =By.xpath("//XCUIElementTypeButton[@name=\"Done\"]");
+	By filterField=By.id("SelectRecipientSearchBar");
+	By doneBtn =By.id("Done");
 	By recipientsTable=By.xpath("//XCUIElementTypeTable");
 	
 	By recipientDetails=By.xpath("//XCUIElementTypeTable//XCUIElementTypeCell");
 	
 	By nextBtn =By.id("Next");
 	
-	By tokenDialogue= By.xpath("//XCUIElementTypeSheet[contains(@name,'How would you like us')]");
+	By tokenDialogue= By.className("XCUIElementTypeSheet");
+			//xpath("//XCUIElementTypeSheet[contains(@name,'How would you like us')]");
 	
 	By emailToken=By.xpath("//XCUIElementTypeSheet//XCUIElementTypeButton[contains(@name,'@')]");
 	

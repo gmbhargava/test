@@ -36,6 +36,16 @@ import io.appium.java_client.TouchAction;
 		String spanishName;
 		String Username;
 		String password;
+		
+		/**
+		 * @author Nagarjuna Reddy
+		 * @story 
+		 *  Zelle Split Confirmation Screen.
+		 */
+		
+		
+		
+		
 
 		
 		@BeforeTest
@@ -53,7 +63,8 @@ import io.appium.java_client.TouchAction;
 				loginPage.userNameTextBox().sendKeys(this.Username);
 				loginPage.passwordTextbox().sendKeys(this.password);
 				driver.hideKeyboard();
-				loginPage.loginButton().click();
+			//	loginPage.loginButton().click();
+				Thread.sleep(9000);
 				Thread.sleep(9000);
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 //				Thread.sleep(9000);

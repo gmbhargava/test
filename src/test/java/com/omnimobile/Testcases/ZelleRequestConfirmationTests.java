@@ -31,11 +31,17 @@ import io.appium.java_client.remote.MobileCapabilityType;
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleRequestConfirmationTests extends Apploader {
 
+	/**
+	 * @author Nagarjuna Reddy
+	 * 
+	 *  ZelleRequestConfirmationTests.
+	 */
+	
 	 String Username;
 	 String password;
 	 String amount;
 	 String message;
-
+	 
 	 @BeforeTest
 	public void login() throws IOException 
 	{
@@ -48,10 +54,11 @@ public class ZelleRequestConfirmationTests extends Apploader {
 			loginPage.userNameTextBox().sendKeys(this.Username);
 			loginPage.passwordTextbox().sendKeys(this.password);
 			driver.hideKeyboard();
-			loginPage.loginButton().click();
+			//loginPage.loginButton().click();
 		
-			Thread.sleep(4000);
+			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
+			
 			zelleSelectRecipient.zelleButton().click();
 			
 			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleRequestButton()));
@@ -89,6 +96,7 @@ public class ZelleRequestConfirmationTests extends Apploader {
 		zelleRequestReview.sendButtn().click();
 		zelleRequestReview.yesBtn().click();
 		Reporter.log("  Amount is displayed as the amount entered in Enter Amount screen");
+		Thread.sleep(8000);
 		wait.until(ExpectedConditions.visibilityOf(zelleRequestConfirmationScreen.confirmFlowLable()));
 		String confirmHeader=zelleRequestConfirmationScreen.confirmFlowLable().getAttribute("name");
 		Thread.sleep(3000);
@@ -98,6 +106,7 @@ public class ZelleRequestConfirmationTests extends Apploader {
 		Thread.sleep(3000);
 		Assert.assertTrue(confirmTitle.equalsIgnoreCase("Request Money"),"Confirmation Title not displayed");
 		Reporter.log("Confirmation title displayed as expected");
+		
 	
 	}
 	
@@ -180,8 +189,10 @@ public class ZelleRequestConfirmationTests extends Apploader {
 				
 				Assert.assertTrue((zelleRequestConfirmationScreen.recipientToken().isDisplayed())," Recipient token not displayed in Confirmation screen");
 				Reporter.log("Recipient token displayed in Confirmation screen");
-				Assert.assertTrue((zelleRequestConfirmationScreen.recipientAvatar().isDisplayed())," Recipient Avatar not displayed in Confirmation screen");
-				Reporter.log("Recipient avatar displayed in Confirmation screen");
+				//Assert.assertTrue((zelleRequestConfirmationScreen.recipientAvatar().isDisplayed())," Recipient Avatar not displayed in Confirmation screen");
+				//Assert.assertTrue((zelleRequestConfirmationScreen.confirmIcon().isDisplayed())," Confirmation Icon not displayed in Confirmation screen");
+
+				//Reporter.log("Confirmation Icon displayed in Confirmation screen");
 			
 			}
 			
@@ -219,40 +230,4 @@ public class ZelleRequestConfirmationTests extends Apploader {
 			}
 			
 	
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-    		
-			
 }
-
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-

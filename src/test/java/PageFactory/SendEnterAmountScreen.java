@@ -18,7 +18,7 @@ import io.appium.java_client.ios.IOSDriver;
 public class SendEnterAmountScreen extends Basedriver {
 
 	
-	By enterAmountFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"ENTER AMOUNT\"]");
+	By enterAmountFlowLable=By.id("ENTER AMOUNT");
 	
 	By sendLable=By.id("EnterAmountTitle");
 	
@@ -29,10 +29,10 @@ public class SendEnterAmountScreen extends Basedriver {
 	
 	
 	
-	By doneBtn =By.xpath("//XCUIElementTypeButton[@name=\"Done\"]");
+	By doneBtn =By.id("Done");
 	By backBtn=By.id("backArrow 1");
 	
-	By reviewBtn= By.id("Review");
+	By reviewBtn= By.id("ReviewAmountButton");
 
 		private By viewTransctionbtn;
 	
@@ -81,9 +81,8 @@ public class SendEnterAmountScreen extends Basedriver {
 		MobileElement revwButton =(MobileElement)driver.findElement(this.reviewBtn);
 		return revwButton;
 	}
-
-
-
+	
+   
 
 
     public MobileElement backButton()

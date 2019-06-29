@@ -1,4 +1,4 @@
-package com.omnimobile.Testcases;
+    package com.omnimobile.Testcases;
 
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -31,6 +31,15 @@ import io.appium.java_client.remote.MobileCapabilityType;
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleRequestSelectRecipientTests extends Apploader {
 
+	
+
+	/**
+	 * @author Nagarjuna Reddy
+	 * @story
+	 *  ZelleRequestSelectRecipientTests.
+	 */
+	
+	
 	String recipientName;
 	String recipientEmail;
 
@@ -57,7 +66,8 @@ public class ZelleRequestSelectRecipientTests extends Apploader {
 			loginPage.userNameTextBox().sendKeys(this.Username);
 			loginPage.passwordTextbox().sendKeys(this.password);
 			driver.hideKeyboard();
-			loginPage.loginButton().click();
+			//loginPage.loginButton().click();
+			Thread.sleep(9000);
 			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 			Thread.sleep(9000);

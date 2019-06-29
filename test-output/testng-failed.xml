@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.omnimobile.Testcases.ZelleSendSelectRecipientTests">
+      <class name="com.omnimobile.Testcases.ZelleSendConfirmationTests">
         <methods>
-          <include name="verifyHeader"/>
+          <include name="verifySendMoneyConfirm"/>
           <include name="setup"/>
-          <include name="tearDown"/>
           <include name="login"/>
+          <include name="tearDown"/>
+          <include name="verifyReviewScreen"/>
         </methods>
-      </class> <!-- com.omnimobile.Testcases.ZelleSendSelectRecipientTests -->
+      </class> <!-- com.omnimobile.Testcases.ZelleSendConfirmationTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

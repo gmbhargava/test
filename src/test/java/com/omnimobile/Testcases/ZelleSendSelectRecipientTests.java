@@ -30,6 +30,15 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleSendSelectRecipientTests extends Apploader {
+	
+	/**
+	 * @author Nagarjuna Reddy
+	 * @story
+	 *  ZelleSendSelectRecipientTests.
+	 */
+	
+	
+	
 
 	 String recipientName;
 	String  recipientEmail;

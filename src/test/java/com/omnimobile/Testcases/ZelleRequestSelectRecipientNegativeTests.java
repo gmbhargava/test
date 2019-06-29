@@ -1,9 +1,6 @@
 
 package com.omnimobile.Testcases;
 
-
-
-	
 	import org.testng.Assert;
 	import org.testng.Reporter;
 	import org.testng.annotations.BeforeClass;
@@ -33,6 +30,13 @@ package com.omnimobile.Testcases;
 
 	//@Listeners({com.omnimobile.listeners.listener.class});
 	public class ZelleRequestSelectRecipientNegativeTests extends Apploader {
+		
+		/**
+		 * @author Nagarjuna Reddy
+		 * @story
+		 *  ZelleRequestSelectRecipientNegativeTests.
+		 */
+		
 
 		String recipientName;
 		String recipientEmail;
@@ -61,7 +65,8 @@ package com.omnimobile.Testcases;
 				loginPage.userNameTextBox().sendKeys(this.Username);
 				loginPage.passwordTextbox().sendKeys(this.password);
 				driver.hideKeyboard();
-				loginPage.loginButton().click();
+				//loginPage.loginButton().click();
+				Thread.sleep(9000);
 				Thread.sleep(9000);
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 //				Thread.sleep(9000);

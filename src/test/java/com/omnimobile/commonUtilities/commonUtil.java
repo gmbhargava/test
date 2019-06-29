@@ -99,6 +99,16 @@ public class commonUtil {
 		new TouchAction(driver).press(start, y).waitAction(Duration.ofMillis(500)).moveTo(end, y).release().perform();
 	}
 	
+	public static void HorizontalSwipe(double from, double to, double length, int durationInMilli) {
+		Dimension size = driver.manage().window().getSize();
+		int height = size.getHeight();
+		int width = size.getWidth();
+		int y = (int) (height * length);
+		int start = (int) (width * from);
+		int end = (int) (width * to);
+		new TouchAction(driver).press(start, y).waitAction(Duration.ofMillis(durationInMilli)).moveTo(end, y).release().perform();
+	}
+	
 	public static void swipeDown() {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;

@@ -17,7 +17,7 @@ import io.appium.java_client.ios.IOSDriver;
 public class ZelleSendReviewScreen extends Basedriver {
 	//IOSDriver driver;
 	
-	By reviewFlowLable=By.xpath("//XCUIElementTypeNavigationBar[@name=\"REVIEW\"]");
+	By reviewFlowLable=By.id("REVIEW");
 	
 	By sendLable=By.id("ReviewAmountHeader");
 	
@@ -25,7 +25,7 @@ public class ZelleSendReviewScreen extends Basedriver {
 	By confirmationIcon=By.id("icon-checkmark");
 	
 	
-	By msgInput=By.xpath("//XCUIElementTypeTextView");
+	By msgInput=By.id("OptionalMessageTextView");
 	By sendBtn =By.id("SendOrRequestMoneyButton");
 	
 	By reviewBtn= By.xpath("//XCUIElementTypeButton[@name=\"Review\"]");

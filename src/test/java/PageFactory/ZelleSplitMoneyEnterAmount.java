@@ -26,7 +26,7 @@ public class ZelleSplitMoneyEnterAmount extends Basedriver {
 		
 	By amountField           =       By.id("EnterAmountTextField");
 	
-	By multiUserAvatarsImg   =       By.id("MainAvtatView");
+	By multiUserAvatarsImg   =       By.id("tickImage");
 	
 	By multiUserTxt          =       By.id("RecipientName");
 	

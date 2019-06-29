@@ -14,13 +14,17 @@ import PageFactory.Login;
 import PageFactory.LoginHelp;
 import PageFactory.SendEnterAmountScreen;
 import PageFactory.TransactionHistoryList;
+import PageFactory.ZelleEnrollment;
 import PageFactory.ZelleRequesSelectRecipient;
 import PageFactory.ZelleRequestConfirmationScreen;
 import PageFactory.ZelleRequestEnterAmountScreen;
 import PageFactory.ZelleRequestReview;
+import PageFactory.ZelleRespondToRequestConfirmation;
+import PageFactory.ZelleRespondToRequestEnterAmount;
 import PageFactory.ZelleSendConfirmationScreen;
 import PageFactory.ZelleSendReviewScreen;
 import PageFactory.ZelleSendSelectRecipient;
+import PageFactory.ZelleSplitConfirmation;
 import PageFactory.ZelleSplitMoneyEnterAmount;
 import PageFactory.ZelleSplitMoneyRecipient;
 import PageFactory.ZelleSplitReview;
@@ -44,6 +48,10 @@ public class Apploader {
 	 public static ZelleSplitMoneyEnterAmount zelleSplitMoneyEnterAmount;
 	 public static ZelleRequestReview zelleRequestReview ;
 	 public static ZelleSplitReview zelleSplitReview;
+	 public static ZelleSplitConfirmation zelleSplitConfirmation;
+	 public static ZelleRespondToRequestConfirmation zelleRespondToRequest ;
+	 public static ZelleRespondToRequestEnterAmount zelleRespondToRequestEnterAmount;
+	 public static ZelleEnrollment zelleEnrollment;
 	 public static WebDriverWait wait;
 	 
 	 public static TransactionHistoryList transactionHistoryPage;
@@ -79,6 +87,10 @@ public class Apploader {
 		   zelleSendConfirmationScreen=new ZelleSendConfirmationScreen(driver);
 		   zelleSplitMoney=new ZelleSplitMoneyRecipient(driver);
 		   zelleSplitReview=new ZelleSplitReview(driver);
+		   zelleSplitConfirmation=new ZelleSplitConfirmation(driver);
+		   zelleRespondToRequest=new ZelleRespondToRequestConfirmation(driver);
+		   zelleRespondToRequestEnterAmount= new ZelleRespondToRequestEnterAmount(driver);
+		   zelleEnrollment=new ZelleEnrollment(driver);
 		    wait=new WebDriverWait(driver,30);		    
 		    
              Loginhelppage =new LoginHelp(driver);

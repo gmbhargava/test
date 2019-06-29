@@ -30,6 +30,16 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleSendConfirmationTests extends Apploader {
+	
+	/**
+	 * @author Nagarjuna Reddy
+	 * @story
+	 *  ZelleRequestSendConfirmationTests.
+	 */
+	
+	
+	
+	
 
 	 public static String Username;
 	 public static String password;
@@ -46,7 +56,8 @@ public class ZelleSendConfirmationTests extends Apploader {
 				loginPage.userNameTextBox().sendKeys(Username);
 				loginPage.passwordTextbox().sendKeys(password);
 				driver.hideKeyboard();
-				loginPage.loginButton().click();
+				//loginPage.loginButton().click();
+				Thread.sleep(9000);
 				Thread.sleep(9000);
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				
@@ -76,7 +87,9 @@ public class ZelleSendConfirmationTests extends Apploader {
 
 			Reporter.log("Token selected successfully");
 			Reporter.log("Recipient selected As Expected");
+			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(sendEnterAmountScreen.selectAmountLabel()));
+			
 			Assert.assertTrue(sendEnterAmountScreen.sendMoneyLable().isDisplayed()," Enter amount header not displayed");
 		
 			Reporter.log(" Amount header displayed as expected");
@@ -92,19 +105,19 @@ public class ZelleSendConfirmationTests extends Apploader {
 			sendEnterAmountScreen.reviewButtn().click();
 			wait.until(ExpectedConditions.visibilityOf(zelleSendReviewScreen.reviewFlowLabl()));
 			Assert.assertTrue(zelleSendReviewScreen.sendLabl().isDisplayed()," Review screen not displayed");
-//			commonUtil.verticalSwipe(20.00, 60.00);
-//		zelleSendReviewScreen.messageInput().sendKeys("Test Message");
-//			
-//			sendEnterAmountScreen.doneButtn().click();
+			commonUtil.swipeDown();
+		zelleSendReviewScreen.messageInput().sendKeys("Test Message");
+			sendEnterAmountScreen.doneButtn().click();
 			Reporter.log(" Review screen displayed as expected");
 		}
 	
 	 
 	 @Test(groups = { "RegressionTest", "smokeTest" },priority=1)
-	public void verifySendMoneyConfirm() {
+	public void verifySendMoneyConfirm() throws InterruptedException {
 		 zelleSendReviewScreen.sendButtn().click();
 		 wait.until(ExpectedConditions.visibilityOf(zelleSendReviewScreen.yesButtn()));
 		 zelleSendReviewScreen.yesButtn().click();
+		 Thread.sleep(9000);
 		 wait.until(ExpectedConditions.visibilityOf(zelleSendConfirmationScreen.confirmFlowLable()));
 		Assert.assertTrue(zelleSendConfirmationScreen.confirmFlowLable().isDisplayed(),"Confirmation screen not displayed");
 		Reporter.log("Confirmation screen displayed as expected");

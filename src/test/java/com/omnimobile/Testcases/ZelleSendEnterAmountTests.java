@@ -30,6 +30,15 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 //@Listeners({com.omnimobile.listeners.listener.class});
 public class ZelleSendEnterAmountTests extends Apploader {
+	
+	/**
+	 * @author Nagarjuna Reddy
+	 * @story
+	 *  ZelleSendEnterAmountTests.
+	 */
+	
+	
+	
 
 	 public static String Username;
 	 public static String password;
@@ -46,7 +55,9 @@ public class ZelleSendEnterAmountTests extends Apploader {
 				loginPage.userNameTextBox().sendKeys(this.Username);
 				loginPage.passwordTextbox().sendKeys(this.password);
 				driver.hideKeyboard();
-				loginPage.loginButton().click();
+				//loginPage.loginButton().click();
+				Thread.sleep(9000);
+				Thread.sleep(9000);
 				wait.until(ExpectedConditions.visibilityOf(zelleSelectRecipient.zelleButton()));
 				Thread.sleep(9000);
 				zelleSelectRecipient.zelleButton().click();
@@ -65,17 +76,19 @@ public class ZelleSendEnterAmountTests extends Apploader {
 	 
 	 
 	 @Test(groups = { "RegressionTest"},priority=0,alwaysRun=true)
-		public void enterAmountVerifyHeader() {
+		public void enterAmountVerifyHeader() throws InterruptedException {
 		 	
 		 	zelleSendSelectRecipientTests.zelleSendButton().click();
+		 	Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(zelleSendSelectRecipientTests.selectRecipientLabel()));
 			List<MobileElement> recipients = zelleSendSelectRecipientTests.recipientsDetailsList();
 			Assert.assertTrue((recipients.size() > 1), "recipients Lists Not Displayed");
-		//	recipients.get(1).click();
+		recipients.get(1).click();
 			Assert.assertTrue((zelleSendSelectRecipientTests.emailTokens().size()>=1), "recipient Email details Not Displayed");
 			Reporter.log("Recipient Emails Details Displayed As Expected");
 			
-	//		zelleSelectRecipient.emailTokens().get(0).click();
+		zelleSelectRecipient.emailTokens().get(0).click();
+Thread.sleep(9000);
 
 			Reporter.log("Token selected successfully");
 			Reporter.log("Recipient selected As Expected");
